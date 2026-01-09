@@ -1,0 +1,46 @@
+Page: Contact/Support
+
+Contact & Support
+We’re Here to Help
+Have a question, need support, or want to understand how Befikra fits your business?
+Reach out to us and our team will get back to you shortly.
+________________________________________
+Contact & Support Form
+UI Placement:
+Center-aligned form card with soft shadow
+Clean, distraction-free layout
+Form Fields
+•	Full Name*
+•	Email Address*
+•	Phone Number
+•	Business Name
+•	Query Type (Dropdown)
+o	Product Enquiry
+o	Technical Support
+o	Billing & Pricing
+o	Demo Request
+o	General Question
+•	Message*
+________________________________________
+Primary CTA Button
+Submit Request
+________________________________________
+Helper Text (Small, Trust-Building)
+•	We usually respond within 24 hours
+•	Support available for active vendors
+•	No spam. Your details stay private
+________________________________________
+Optional Support Note
+Already a Befikra partner?
+Log in to your vendor dashboard for faster support.
+Text Link: Vendor Login →
+________________________________________
+Consent Line (Small Text)
+By submitting this form, you agree to our Privacy Policy.
+________________________________________
+Other Ways to Reach Us (Optional, Minimal)
+•	Support Email: support@gobefikra.com
+•	Business Hours: Mon–Sat, 10 AM – 6 PM
+UI Note: Keep this section light — form remains the focus.
+ 
+

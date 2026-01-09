@@ -13,7 +13,7 @@ export function Footer() {
     Company: [
       { name: "About Us", href: "#" },
       { name: "Careers", href: "#" },
-      { name: "Contact", href: "#" },
+      { name: "Contact", href: "/contact" },
       { name: "Blog", href: "#" }
     ],
     Resources: [
@@ -22,8 +22,8 @@ export function Footer() {
       { name: "Community", href: "#" }
     ],
     Legal: [
-      { name: "Privacy Policy", href: "#" },
-      { name: "Terms of Service", href: "#" }
+      { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Terms & Conditions", href: "/terms-conditions" }
     ]
   }
 

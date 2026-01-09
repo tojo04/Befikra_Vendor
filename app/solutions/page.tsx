@@ -57,7 +57,7 @@ const industries = [
       "Reduced dependence on manual staff",
       "Clear visibility across all experiences"
     ],
-    image: "https://images.unsplash.com/photo-1533130061792-649d45df4c72?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1533130061792-649d45df4c72?auto=format&fit=crop&q=80&w=2070"
   },
   {
     id: "travel",

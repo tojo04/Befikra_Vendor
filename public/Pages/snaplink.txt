@@ -1,0 +1,333 @@
+Snaplink
+One Link. Every Experience. More Bookings.
+Befikra Snaplink is a smart link-in-bio booking tool built for trekking agencies, adventure operators, and travel businesses.
+Turn your Instagram bio into a mini booking website that captures leads, takes payments, and tells your brand story — all from one link.
+Primary CTA: Schedule a Demo
+ Secondary CTA: Vendor Login
+
+🎨 Visual & UI Direction (Hero Section)
+Background: Clean white / light neutral
+
+
+Hero visual:
+
+
+Mobile phone mockup showing Snaplink page
+
+
+Scrollable experience list visible
+
+
+Accent color: Brand primary for CTA & highlights
+
+
+Animation:
+
+
+Fade-in + slight upward motion
+
+
+Interaction:
+
+
+CTA hover = subtle lift + shadow
+
+
+
+Why Vendors Need Snaplink
+Social media brings traffic — but traffic without structure loses money.
+Too many links confuse customers
+
+
+DMs slow down bookings
+
+
+No visibility on who clicked or dropped
+
+
+Snaplink solves this with one powerful, conversion-focused link.
+UI Space: Hero Snaplink preview (mobile view)
+
+🎨 Visual & UI Direction
+Visual:
+
+
+Mobile Snaplink page with multiple experience cards
+
+
+Animation:
+
+
+Scroll indicator hint on mobile mockup
+
+
+Interaction:
+
+
+Hover / tap on experience → subtle highlight
+
+
+
+What Snaplink Helps You Do
+
+Showcase All Experiences in One Place
+Display treks, camps, adventures, and trips
+
+
+Clean, scroll-friendly layout
+
+
+Easy discovery for customers
+
+
+UI Space: Snaplink experience list preview
+
+🎨 UI Direction
+Visual:
+
+
+Vertical list of experience cards
+
+
+Color:
+
+
+Neutral cards with brand accent tags
+
+
+Animation:
+
+
+Cards slide up sequentially
+
+
+Interaction:
+
+
+Tap card → expands details
+
+
+
+Capture Leads Instantly
+Enquiry buttons linked to AI chat
+
+
+No lost clicks or unanswered questions
+
+
+Leads saved automatically
+
+
+UI Space: Lead capture interaction preview
+
+🎨 UI Direction
+Visual:
+
+
+CTA button → AI chat overlay
+
+
+Color:
+
+
+Accent color for enquiry buttons
+
+
+Animation:
+
+
+Chat window slides up from bottom
+
+
+Interaction:
+
+
+Typing indicator animation for AI
+
+
+
+Get Bookings & Payments
+Share booking links directly from Snaplink
+
+
+Real-time availability
+
+
+Secure payments & instant confirmation
+
+
+UI Space: Booking flow from Snaplink → checkout
+
+🎨 UI Direction
+Visual:
+
+
+Step-by-step booking flow (Snaplink → checkout)
+
+
+Animation:
+
+
+Progress indicator movement
+
+
+Interaction:
+
+
+Button states clearly visible (loading / success)
+
+
+
+Brand It Your Way
+Custom colors & images
+
+
+Clean, professional look
+
+
+Matches your brand identity
+
+
+UI Space: Snaplink customization screen
+
+🎨 UI Direction
+Visual:
+
+
+Theme selector / color picker UI
+
+
+Interaction:
+
+
+Live preview on change
+
+
+Animation:
+
+
+Instant visual update (no reload)
+
+
+
+Built for Social-First Vendors
+Snaplink is perfect if most of your customers come from:
+Instagram
+
+
+WhatsApp
+
+
+Ads & influencer shoutouts
+
+
+No website required.
+
+🎨 Visual & UI Direction
+Visual:
+
+
+Channel icons (Instagram, WhatsApp, Ads)
+
+
+Animation:
+
+
+Icons fade in with staggered timing
+
+
+Tone:
+
+
+Simple, confidence-driven
+
+
+
+Connected to Your Vendor Dashboard
+Snaplink works seamlessly with Befikra’s platform.
+Every click tracked
+
+
+Every enquiry saved as a lead
+
+
+Every booking recorded automatically
+
+
+UI Space: Snaplink analytics inside dashboard
+
+🎨 UI Direction
+Visual:
+
+
+Analytics panel with click & conversion metrics
+
+
+Animation:
+
+
+Charts animate left to right
+
+
+Interaction:
+
+
+Hover → metric tooltip
+
+
+
+Why Vendors Prefer Snaplink
+Because it turns attention into action.
+Higher click-to-book conversion
+
+
+Faster decision-making
+
+
+Less DM back-and-forth
+
+
+Clear visibility on performance
+
+
+
+🎨 Visual & UI Direction
+Visual:
+
+
+Metric cards or checkmark list
+
+
+Color:
+
+
+Accent color only for positive outcomes
+
+
+Animation:
+
+
+Subtle count-up or checkmark reveal
+
+
+
+Turn Your Bio Link into a Booking Engine
+Primary CTA: Schedule a Demo
+ Secondary CTA: Vendor Login
+
+🎨 Final CTA Design Notes
+Background: Soft contrast block (light tint)
+
+
+Primary CTA: Brand color
+
+
+Secondary CTA: Outline or text style
+
+
+Animation: Gentle pulse on primary CTA
+
+
+Interaction: Scroll pause moment before footer
+
+

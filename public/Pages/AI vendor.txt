@@ -1,0 +1,426 @@
+AI Vendor Panel
+Run Your Entire Experience Business from One Intelligent Dashboard
+The AI Vendor Panel by Befikra is not just a dashboard.
+ It’s a decision-making system built for vendors who want control, clarity, and scale — without micromanaging daily operations.
+Primary CTA: Explore with a Demo
+ Secondary CTA: See Pricing
+
+🎨 Visual & UI Direction (Hero Section)
+Background: Clean light background (off-white or very light grey)
+
+
+Accent color: Befikra primary (used only for CTAs & highlights)
+
+
+Hero visual:
+
+
+Full-width dashboard overview screenshot
+
+
+Slight perspective tilt or soft shadow
+
+
+
+Animation:
+
+
+Fade + slide-up on page load
+
+
+Interaction:
+
+
+CTA buttons: subtle lift + shadow on hover
+
+
+
+This Is Not Just Software. It’s How Modern Vendors Operate.
+Most tools help you manage tasks.
+ The Befikra AI Vendor Panel helps you run a business.
+It connects sales, conversations, bookings, payments, and operations — and then uses AI to make sense of it all.
+UI Space: Full-width AI Vendor Panel screenshot (overview view)
+
+🎨 Visual & UI Direction
+Screenshot type:
+
+
+Wide dashboard overview (multiple widgets visible)
+
+
+Treatment:
+
+
+Rounded container
+
+
+Soft shadow
+
+
+Animation:
+
+
+Slow fade-in on scroll
+
+
+Interaction:
+
+
+Hover over screenshot → subtle zoom (1–2%)
+
+
+
+What Makes This Panel Different (And Worth Exploring)
+🧠 AI That Understands Vendor Reality
+This AI is trained on experience-business behaviour, not generic SaaS data.
+Knows peak enquiry times
+
+
+Understands group booking patterns
+
+
+Recognises high-intent vs casual leads
+
+
+Adapts to seasonal demand
+
+
+Result: You don’t just see data — you see signals.
+UI Space: AI insights / recommendations widget
+
+🎨 Visual & UI Direction
+Visual:
+
+
+AI insights card/widget
+
+
+Highlighted recommendations
+
+
+Color:
+
+
+Neutral cards + accent highlights for “AI insight”
+
+
+Animation:
+
+
+Insight cards slide in one-by-one
+
+
+Interaction:
+
+
+Hover → tooltip (“Why this matters”)
+
+
+
+🔍 One Screen, Full Business Visibility
+At any moment, you can answer:
+How many leads came in today?
+
+
+Which experiences are filling fastest?
+
+
+Where are people dropping off?
+
+
+How much revenue is locked vs pending?
+
+
+No switching tools.
+ No spreadsheets.
+UI Space: Metrics + charts dashboard view
+
+🎨 Visual & UI Direction
+Visual:
+
+
+Metrics tiles + charts
+
+
+Color:
+
+
+Muted charts
+
+
+Accent color only for key numbers
+
+
+Animation:
+
+
+Numbers count up on scroll
+
+
+Interaction:
+
+
+Hover on metric → subtle highlight
+
+
+
+⚙️ AI Reduces Daily Decision Fatigue
+Instead of checking everything manually, the panel guides your attention.
+Highlights stalled leads
+
+
+Flags underperforming trips
+
+
+Suggests follow-ups
+
+
+Shows what needs action now
+
+
+This is assisted decision-making, not just automation.
+UI Space: “Action required” / priority queue view
+
+🎨 Visual & UI Direction
+Visual:
+
+
+Priority list / task queue
+
+
+Color:
+
+
+Red / amber / green indicators (very subtle)
+
+
+Animation:
+
+
+Items appear with staggered fade
+
+
+Interaction:
+
+
+Click item → expands inline details
+
+
+
+Everything Your Business Touches, Lives Here
+
+Leads & Conversations
+All Instagram, WhatsApp & website leads in one CRM
+
+
+Full conversation history
+
+
+Lead status & notes
+
+
+UI Space: Unified leads CRM view
+
+🎨 UI Direction
+Visual: Inbox-style CRM
+
+
+Interaction:
+
+
+Click lead → slide-in detail panel
+
+
+Animation:
+
+
+Smooth panel transition
+
+
+
+Bookings & Experiences
+Manage trips, dates & group capacities
+
+
+Track confirmed & upcoming bookings
+
+
+Control availability in real time
+
+
+UI Space: Experience & booking management screen
+
+🎨 UI Direction
+Visual:
+
+
+Calendar + list hybrid
+
+
+Interaction:
+
+
+Hover date → capacity preview
+
+
+Animation:
+
+
+Calendar transitions on date change
+
+
+
+Payments & Settlements
+See earnings at a glance
+
+
+Track payouts & settlements
+
+
+No manual reconciliation
+
+
+UI Space: Revenue & payout dashboard
+
+🎨 UI Direction
+Visual:
+
+
+Revenue cards + payout timeline
+
+
+Animation:
+
+
+Charts animate left to right
+
+
+Interaction:
+
+
+Click payout → drill-down modal
+
+
+
+Team & Operations
+Auto-assign leads
+
+
+Track ownership & follow-ups
+
+
+Maintain operational clarity
+
+
+UI Space: Team assignment & workflow screen
+
+🎨 UI Direction
+Visual:
+
+
+Kanban-style or assignment table
+
+
+Interaction:
+
+
+Drag & drop ownership
+
+
+Animation:
+
+
+Smooth reordering motion
+
+
+
+The Most Underrated Benefit: Business Memory
+As vendors grow, knowledge stays stuck in people’s heads.
+The AI Vendor Panel becomes your business memory:
+What worked last season
+
+
+Which experiences convert best
+
+
+Which channels perform consistently
+
+
+Where operational gaps exist
+
+
+This means your business becomes less person-dependent and more system-driven.
+
+🎨 Visual & UI Direction
+Visual:
+
+
+Historical trends / comparison charts
+
+
+Color:
+
+
+Calm, analytical tones
+
+
+Animation:
+
+
+Timeline-based reveal
+
+
+
+Built for Growth Without Chaos
+Whether you’re:
+A solo trekking operator
+
+
+A growing adventure brand
+
+
+A multi-experience travel company
+
+
+The panel adapts to your scale — without breaking your workflow.
+
+🎨 Visual & UI Direction
+Visual:
+
+
+3 cards (solo → growing → scale)
+
+
+Animation:
+
+
+Cards animate in sequence
+
+
+Interaction:
+
+
+Hover highlights growth stage
+
+
+
+See the AI Vendor Panel in Action
+The real value shows when you use it.
+Primary CTA: Schedule a Demo
+ Secondary CTA: Vendor Login
+
+🎨 Final CTA Design Notes
+Background: Soft contrast block
+
+
+CTA button: Primary brand color
+
+
+Animation: Gentle pulse on primary CTA
+
+
+Interaction: Scroll lock focus moment
+
+
+
+
