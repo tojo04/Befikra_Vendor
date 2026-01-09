@@ -1,0 +1,255 @@
+Grow Your Adventure Business with AI-Powered Automation
+The Smart Vendor Platform Built for Treks, Camps & Experience Businesses
+Befikra is an AI-first vendor platform designed to help adventure businesses capture more leads, convert bookings faster, and run operations efficiently — without increasing workload or team size.
+Primary CTA: Schedule a Demo
+ Secondary CTA: See Pricing
+
+🎨 Hero Section — Visual & Interaction Direction
+Layout: Split screen (text left, visual right)
+
+
+Hero visual: Vendor dashboard screenshot or subtle animated preview
+
+
+Background: Clean white / very light neutral
+
+
+Accent color: Brand primary (used only for CTAs & highlights)
+
+
+Animation
+Text fades in first
+
+
+Dashboard slides in gently from the right
+
+
+Interaction
+CTA hover → subtle lift + shadow
+
+
+
+AI That Speeds Up Work — Not Adds More
+Befikra is built to reduce manual effort and decision fatigue, so vendors spend less time managing and more time growing.
+What Vendors See After Switching to Befikra
+⚡ 3–5× faster response times across Instagram, WhatsApp & website
+
+
+⏱ Save 10–15 hours per week by eliminating manual replies & follow-ups
+
+
+📈 20–35% higher booking conversion from faster, AI-led responses
+
+
+🔁 0 lead leakage — every enquiry is captured, tracked, and followed up
+
+
+👥 Same team, higher output — no hiring needed during peak seasons
+
+
+UI Space: Performance snapshot showing response time, workload reduction, and conversion lift
+🎨 Visual & Interaction Notes
+Visual: 4 metric cards (Response Time ↓, Manual Work ↓, Conversion ↑, Leads Captured ↑)
+
+
+Animation: Numbers count up on scroll
+
+
+Interaction: Hover → tooltip (“Why this matters”)
+
+
+
+Built for Vendors Who Think Like Business Owners
+Befikra is made for vendors who want systems, scale, and control, not daily chaos.
+AI handles repetitive conversations
+
+
+Your team focuses on high-intent buyers
+
+
+Bookings move faster with automation
+
+
+Operations stay organised as you grow
+
+
+UI Space: Clean dashboard screenshot showing leads, bookings, and analytics in one view
+🎨 Visual & Interaction Notes
+Visual: Unified dashboard (Leads + Bookings + Analytics)
+
+
+Animation: Subtle fade-in on scroll
+
+
+Interaction: Hover metric → soft highlight
+
+
+
+One Platform. AI Working Across Every Channel.
+Instagram AI Automation
+AI replies to DMs, comments, and ad enquiries
+
+
+Captures lead details automatically
+
+
+Never miss a booking opportunity
+
+
+UI Space: Instagram DM → Lead → Booking flow inside the dashboard
+Interaction
+AI ON / OFF toggle visible
+
+
+Left-to-right flow animation
+
+
+
+WhatsApp AI Automation
+AI answers FAQs, pricing, and availability
+
+
+Qualifies travellers before your team steps in
+
+
+Sends reminders, updates, and confirmations
+
+
+UI Space: WhatsApp chat flow builder + live conversation view
+Interaction
+Typing indicator animation
+
+
+Human takeover button
+
+
+
+Website AI Booking Engine
+AI-assisted booking flow
+
+
+Real-time slots, group capacity & payments
+
+
+Drop-off lead capture powered by AI
+
+
+UI Space: Booking funnel analytics + checkout screen
+Interaction
+Funnel stages animate top to bottom
+
+
+Hover stage → lead count tooltip
+
+
+
+AI-Driven Vendor Dashboard (Your Command Center)
+Everything runs from one intelligent dashboard built specifically for adventure vendors.
+AI-powered Leads CRM
+
+
+Booking & trip management
+
+
+Vendor operations & payouts
+
+
+Performance analytics & insights
+
+
+UI Space: Full-width vendor dashboard screenshot with key metrics highlighted
+🎨 Visual & Interaction Notes
+Animation: Metrics count up on scroll
+
+
+Interaction: Click metric → implied drill-down
+
+
+
+Why AI Changes the Game for Vendors
+Before Befikra
+Manual replies eating hours
+
+
+High-intent leads slipping away
+
+
+Disorganised chats & spreadsheets
+
+
+No clear view of business performance
+
+
+After Befikra
+AI handles conversations 24×7
+
+
+Qualified leads reach you faster
+
+
+Automated booking & follow-ups
+
+
+Clear visibility across leads, bookings & revenue
+
+
+UI Space: Split-screen Before vs After with dashboard visuals
+
+Core AI-Powered Products
+AI Vendor Panel
+Run your entire business from one AI-assisted dashboard
+ UI Space: Tabs — Leads | Bookings | Ops | Analytics
+AI Lead Automation
+Let AI qualify, score, and route leads automatically
+ UI Space: AI flow builder or lead scoring view
+Multi-Channel Booking System
+Sell across Instagram, WhatsApp, and your website
+ UI Space: Channel performance comparison chart
+AI Insights & Analytics
+See what sells best, what converts, and where to grow
+ UI Space: Top trips, conversion rates, revenue graphs
+🎨 Visual Notes
+Layout: 2×2 or 4-card grid
+
+
+Interaction: Hover → slight elevation
+
+
+
+Works With the Tools You Already Use
+Payments, messaging platforms, and analytics tools integrate seamlessly — no technical complexity.
+UI Space: Integration logos grid
+ Animation: Subtle fade-in
+
+Built for Scale. Trusted by Growing Adventure Brands
+Vendors using Befikra achieve:
+Faster response times
+
+
+Higher conversion rates
+
+
+Lower operational effort
+
+
+Better control over growth
+
+
+UI Space: Metric cards / checklist
+ Animation: Count-up or reveal
+
+Simple Pricing. No Hidden Fees.
+Plans designed for solo vendors and large adventure businesses alike.
+CTA: View Pricing
+ CTA: Schedule a Demo
+
+Ready to Let AI Run the Busywork?
+While you focus on creating unforgettable experiences.
+Primary CTA: Schedule a Demo
+ Secondary CTA: Vendor Login
+
+Footer
+Product • Pricing • FAQs • Contact
+ Privacy Policy • Terms of Service
+ © Befikra. All rights reserved.
+

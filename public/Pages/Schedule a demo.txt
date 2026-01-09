@@ -1,0 +1,188 @@
+Schedule a Demo
+See How AI Helps You Grow Your Adventure Business
+Get a quick, personalised walkthrough of Befikra and understand how our AI-powered vendor platform fits your business.
+
+Demo Request Form
+🧩 UI Placement & Layout
+Desktop:
+
+
+Form card on the right
+
+
+Optional dashboard preview on the left (blurred / static)
+
+
+Mobile:
+
+
+Single-column
+
+
+Form first, visuals below
+
+
+Form Container Style
+Rounded card
+
+
+Soft shadow
+
+
+Clean white background
+
+
+
+Form Fields
+(Only What’s Needed)
+Full Name*
+
+
+Business Name*
+
+
+Phone Number*
+
+
+Email Address*
+
+
+Business Type (Dropdown)
+
+
+Trekking Group
+
+
+Camps / Outdoor Experiences
+
+
+Adventure Sports
+
+
+Travel Experiences
+
+
+Instagram / Website Link (Optional)
+
+
+
+🎨 Visual & Interaction Notes (Form)
+Input style:
+
+
+Large, touch-friendly fields
+
+
+Focus state:
+
+
+Subtle brand-color border
+
+
+Validation:
+
+
+Inline, friendly error messages
+
+
+Animation:
+
+
+Smooth field focus transition
+
+
+
+Primary CTA Button
+Schedule My Demo
+Full-width button
+
+
+Brand primary color
+
+
+Rounded corners
+
+
+Hover / Tap Interaction
+Slight elevation
+
+
+Shadow increase
+
+
+Loading spinner on submit
+
+
+
+Secondary Action
+Vendor Login →
+ (Text link, low emphasis)
+
+Form Helper Text
+(Small, Trust-Building)
+Free & personalised demo
+
+
+No technical knowledge required
+
+
+Takes ~20 minutes
+
+
+
+Consent Line
+(Small Text)
+By scheduling a demo, you agree to our Privacy Policy.
+
+Optional Trust Element
+(Below Form)
+“Trusted by 250+ adventure businesses”
+ or
+
+
+Small testimonial snippet (1 line)
+
+
+
+🎨 Visual Direction (Trust Element)
+Muted text
+
+
+Optional small icon or avatar
+
+
+No heavy logos (keep it clean)
+
+
+
+Final CTA (Mobile-Optimised)
+Schedule My Demo
+AI-powered booking & vendor automation
+
+🎨 Mobile UX Notes
+Sticky bottom CTA (optional)
+
+
+One-tap submit
+
+
+Auto-focus next input
+
+
+Minimal scrolling
+
+
+
+✅ Conversion Design Principles Applied
+This page:
+Removes friction
+
+
+Builds trust without clutter
+
+
+Keeps focus on one action
+
+
+Matches the overall Befikra SaaS tone
+

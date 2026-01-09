@@ -1,65 +1,111 @@
-import Image from "next/image";
+import { Navbar } from "./components/Navbar";
+import { Hero } from "./components/Hero";
+import { PerformanceMetrics } from "./components/PerformanceMetrics";
+import { UnifiedDashboard } from "./components/UnifiedDashboard";
+import { ChannelIntegration } from "./components/ChannelIntegration";
+import { VendorCommandCenter } from "./components/VendorCommandCenter";
+import { BeforeAfter } from "./components/BeforeAfter";
+import { CoreProducts } from "./components/CoreProducts";
+import { Integrations } from "./components/Integrations";
+import { Testimonials } from "./components/Testimonials";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+function CTA() {
+  return (
+    <section className="py-24 relative overflow-hidden bg-slate-900">
+       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+       <div className="absolute top-0 w-full h-full bg-slate-900/50"></div>
+       <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-8">
+              Ready to Automate Your Adventure Business?
+            </h2>
+            <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
+              Join 500+ vendors who are scaling effortlessly with Befikra.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/demo" className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-full transition-all shadow-lg hover:shadow-blue-500/50 text-lg">
+                 Get Started for Free
+              </Link>
+              <Link href="/demo" className="w-full sm:w-auto px-8 py-4 bg-transparent border border-gray-700 hover:bg-white/10 text-white font-bold rounded-full transition-all text-lg flex items-center justify-center group">
+                 Book a Demo
+                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+       </div>
+    </section>
+  )
+}
+
+function Footer() {
+  const links = {
+    Products: ["Copilot", "Itinerary", "CRM", "Payments"],
+    Company: ["About Us", "Careers", "Contact", "Blog"],
+    Resources: ["Help Center", "API Docs", "Community"],
+    Legal: ["Privacy Policy", "Terms of Service"]
+  }
+
+  return (
+    <footer className="bg-slate-50 pt-20 pb-12 border-t border-gray-200">
+       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-6 gap-10 mb-16">
+              <div className="col-span-2 lg:col-span-2">
+                 <div className="flex items-center gap-2 mb-6">
+                     <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-white font-bold">B</div>
+                     <span className="font-bold text-xl text-slate-900">Befikra</span>
+                 </div>
+                 <p className="text-slate-500 text-sm max-w-xs mb-6">
+                   Automating the adventure business, one booking at a time.
+                 </p>
+                 <div className="flex gap-4">
+                     {[1,2,3,4].map(i => (
+                       <div key={i} className="w-8 h-8 rounded-full bg-slate-200 hover:bg-slate-300 transition-colors cursor-pointer"></div>
+                     ))}
+                 </div>
+              </div>
+              
+              {Object.entries(links).map(([category, items]) => (
+                <div key={category}>
+                   <h4 className="font-bold text-slate-900 mb-6">{category}</h4>
+                   <ul className="space-y-4">
+                      {items.map(item => (
+                        <li key={item}>
+                          <Link href="#" className="text-slate-500 hover:text-blue-600 transition-colors text-sm font-medium">
+                            {item}
+                          </Link>
+                        </li>
+                      ))}
+                   </ul>
+                </div>
+              ))}
+          </div>
+          
+          <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+             <p>© 2024 Befikra. All rights reserved.</p>
+             <div className="flex gap-8 mt-4 md:mt-0">
+                <span>English (US)</span>
+             </div>
+          </div>
+       </div>
+    </footer>
+  )
+}
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      <Hero />
+      <PerformanceMetrics />
+      <UnifiedDashboard />
+      <ChannelIntegration />
+      <VendorCommandCenter />
+      <BeforeAfter />
+      <CoreProducts />
+      <Integrations />
+      <Testimonials />
+      <CTA />
+      <Footer />
     </div>
   );
 }
