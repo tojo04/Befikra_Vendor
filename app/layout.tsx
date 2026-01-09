@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Perk | The intelligent platform for travel and spend",
-  description: "Perk’s AI powered platform brings travel bookings, events, expense management, and invoice payments together in one intelligent platform.",
+  title: "Befikra | The intelligent platform for travel and spend",
+  description: "Befikra’s AI powered platform brings travel bookings, events, expense management, and invoice payments together in one intelligent platform.",
 };
 
 export default function RootLayout({

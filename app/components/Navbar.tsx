@@ -21,6 +21,13 @@ export function Navbar() {
     setScrolled(latest > 20);
   });
 
+  const navLinks = [
+    { name: "Products", href: "/products" },
+    { name: "Solutions", href: "/solutions" },
+    { name: "Customers", href: "#" },
+    { name: "Pricing", href: "#" },
+  ];
+
   return (
     <motion.header
       variants={{
@@ -37,23 +44,23 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+          <Link href="/" className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
               B
             </div>
             <span className="font-bold text-xl tracking-tight text-slate-900">
               Befikra
             </span>
-          </div>
+          </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            {["Product", "Solutions", "Customers", "Pricing"].map((item) => (
+            {navLinks.map((item) => (
               <Link
-                key={item}
-                href="#"
+                key={item.name}
+                href={item.href}
                 className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors"
               >
-                {item}
+                {item.name}
               </Link>
             ))}
           </div>
@@ -95,13 +102,13 @@ export function Navbar() {
             className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
         >
             <div className="px-4 py-4 space-y-4 flex flex-col">
-              {["Product", "Solutions", "Customers", "Pricing"].map((item) => (
+              {navLinks.map((item) => (
                 <Link
-                  key={item}
-                  href="#"
+                  key={item.name}
+                  href={item.href}
                   className="text-base font-medium text-slate-600 hover:text-blue-600 transition-colors"
                 >
-                  {item}
+                  {item.name}
                 </Link>
               ))}
                <hr className="border-gray-100" />
