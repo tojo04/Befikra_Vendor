@@ -1,151 +1,257 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Globe, CheckCircle2 } from "lucide-react";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import { Globe, CheckCircle2, ArrowUpRight, Sparkles } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 const channels = [
   {
     name: "Instagram",
     logo: "/logos/Instagram_Glyph_Gradient.svg",
     useIcon: true,
-    description: "Turn scrolling into bookings.",
-    color: "bg-gradient-to-br from-purple-500 to-pink-500",
+    tagline: "Turn scrollers into explorers",
+    description: "Capture adventure-seekers directly from their feeds. Every DM becomes a potential booking.",
+    color: "from-purple-600 to-pink-600",
+    accentColor: "#E4405F",
     features: [
-      "Auto-Reply to DMs & Comments",
-      "Convert Comments into Leads",
-      "24/7 Engagement"
-    ]
+      "Auto-respond to story mentions",
+      "Convert comments to leads instantly",
+      "24/7 AI engagement"
+    ],
+    stats: { label: "Response Time", value: "< 30s" }
   },
   {
     name: "WhatsApp",
     logo: "/logos/whatsapp.svg",
     useIcon: true,
-    description: "Instant communication where it matters.",
-    color: "bg-green-500",
+    tagline: "Where conversations convert",
+    description: "Meet your customers where they already are. Instant quotes, automated follow-ups, personal touch at scale.",
+    color: "from-green-500 to-emerald-600",
+    accentColor: "#25D366",
     features: [
-      "Instant Quote Delivery",
-      "Automated Follow-ups",
-      "Broadcasting to Leads"
-    ]
+      "Instant itinerary sharing",
+      "Smart broadcast campaigns",
+      "Payment links in chat"
+    ],
+    stats: { label: "Conversion Rate", value: "+47%" }
   },
   {
     name: "Website",
     icon: Globe,
     useIcon: false,
-    description: "Make your site your best salesperson.",
-    color: "bg-blue-500",
+    tagline: "Your 24/7 booking machine",
+    description: "Transform your website into an intelligent sales agent that never sleeps, never misses a lead.",
+    color: "from-blue-500 to-cyan-500",
+    accentColor: "#3B82F6",
     features: [
-      "Live Chat Assistant",
-      "Lead Capture Forms",
-      "Smart Itinerary Builder"
-    ]
+      "AI-powered live chat",
+      "Smart lead capture forms",
+      "Real-time availability sync"
+    ],
+    stats: { label: "Lead Capture", value: "+85%" }
   }
 ];
 
 export function ChannelIntegration() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
-    <section className="py-24" style={{ backgroundColor: '#3C79D2' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-32 relative overflow-hidden" style={{ backgroundColor: '#0A1E3B' }}>
+      {/* Animated background */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-4xl mx-auto mb-20"
         >
-          <motion.h2 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+            style={{ backgroundColor: 'rgba(59, 130, 246, 0.1)', borderColor: '#3B82F6' }}
           >
-            One Platform for All Your Channels
+            <Sparkles className="w-4 h-4" style={{ color: '#60A5FA' }} />
+            <span className="text-sm font-semibold" style={{ color: '#93C5FD' }}>Omnichannel Intelligence</span>
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight"
+          >
+            Every Channel.<br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400">
+              One Conversation.
+            </span>
           </motion.h2>
+          
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-white/90"
+            transition={{ delay: 0.2 }}
+            className="text-xl leading-relaxed"
+            style={{ color: '#94A3B8' }}
           >
-            Your customers are everywhere. Now, you can be too—without the burnout.
+            Stop juggling platforms. Start capturing leads everywhere your customers are—Instagram DMs, WhatsApp chats, website visitors—all flowing into one unified inbox.
           </motion.p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        {/* Channel Cards */}
+        <div className="grid lg:grid-cols-3 gap-8">
           {channels.map((channel, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="group relative cursor-pointer h-full"
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15, duration: 0.6, type: "spring" }}
+              onHoverStart={() => setHoveredIndex(i)}
+              onHoverEnd={() => setHoveredIndex(null)}
+              className="group relative"
             >
               <motion.div
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="bg-white rounded-2xl p-8 shadow-md border border-gray-200 flex flex-col h-full relative overflow-hidden"
+                whileHover={{ y: -12 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="relative rounded-3xl overflow-hidden h-full"
+                style={{ 
+                  backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                  backdropFilter: 'blur(20px)',
+                  border: '1px solid rgba(255, 255, 255, 0.05)'
+                }}
               >
-                {/* Hover gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 transition-all duration-500"></div>
+                {/* Gradient overlay */}
+                <div 
+                  className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-gradient-to-br ${channel.color}`}
+                ></div>
                 
-                {/* Animated border on hover */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-br from-blue-400 to-purple-400 bg-clip-border"></div>
-                </div>
-                
-                <div className="relative z-10 flex flex-col h-full">
-                  {/* Icon */}
-                  <motion.div 
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.3 }}
-                    className={`w-16 h-16 rounded-xl ${channel.color} flex items-center justify-center text-white mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 p-3`}
-                  >
-                    {channel.useIcon ? (
-                      <div className="relative w-full h-full">
-                        <Image
-                          src={channel.logo}
-                          alt={`${channel.name} logo`}
-                          fill
-                          className="object-contain"
-                        />
+                {/* Glow effect on hover */}
+                <motion.div
+                  className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"
+                  style={{ background: `linear-gradient(135deg, ${channel.accentColor}40, transparent)` }}
+                ></motion.div>
+
+                <div className="relative p-8 flex flex-col h-full">
+                  {/* Icon & Stats Row */}
+                  <div className="flex items-start justify-between mb-6">
+                    <motion.div 
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ duration: 0.3 }}
+                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${channel.color} flex items-center justify-center shadow-2xl p-3 relative`}
+                      style={{ boxShadow: `0 8px 32px ${channel.accentColor}40` }}
+                    >
+                      {channel.useIcon ? (
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={channel.logo}
+                            alt={channel.name}
+                            fill
+                            className="object-contain filter brightness-0 invert"
+                          />
+                        </div>
+                      ) : (
+                        <channel.icon className="w-8 h-8 text-white" />
+                      )}
+                    </motion.div>
+
+                    {/* Stats Badge */}
+                    <motion.div
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.3 + i * 0.1 }}
+                      className="text-right px-3 py-1.5 rounded-full"
+                      style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
+                    >
+                      <div className="text-xs font-medium" style={{ color: '#64748B' }}>{channel.stats.label}</div>
+                      <div className={`text-lg font-bold bg-gradient-to-r ${channel.color} bg-clip-text text-transparent`}>
+                        {channel.stats.value}
                       </div>
-                    ) : (
-                      <channel.icon className="w-8 h-8" />
-                    )}
-                  </motion.div>
-                  
-                  {/* Title */}
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
-                    {channel.name}
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-slate-600 mb-8 leading-relaxed">
-                    {channel.description}
-                  </p>
-                  
-                  {/* Features */}
-                  <ul className="space-y-3 mt-auto">
-                    {channel.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-700 text-sm font-medium leading-relaxed">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                    </motion.div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-white mb-2">
+                      {channel.name}
+                    </h3>
+                    <p className="text-sm font-semibold mb-4" style={{ color: channel.accentColor }}>
+                      {channel.tagline}
+                    </p>
+                    <p className="text-sm leading-relaxed mb-6" style={{ color: '#94A3B8' }}>
+                      {channel.description}
+                    </p>
+
+                    {/* Features */}
+                    <ul className="space-y-3 mb-6">
+                      {channel.features.map((feature, idx) => (
+                        <motion.li
+                          key={idx}
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.4 + idx * 0.1 }}
+                          className="flex items-start gap-3"
+                        >
+                          <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: channel.accentColor }} />
+                          <span className="text-sm font-medium" style={{ color: '#CBD5E1' }}>{feature}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* CTA */}
+                  <motion.button
+                    whileHover={{ x: 5 }}
+                    className="flex items-center gap-2 text-sm font-semibold group/btn mt-auto"
+                    style={{ color: channel.accentColor }}
+                  >
+                    Learn more
+                    <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                  </motion.button>
                 </div>
-                
+
                 {/* Shine effect */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12"></div>
-                </div>
+                <motion.div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"
+                  style={{
+                    background: 'linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%)',
+                  }}
+                  animate={hoveredIndex === i ? { x: ['-100%', '200%'] } : {}}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                ></motion.div>
               </motion.div>
             </motion.div>
           ))}
         </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+          className="mt-16 text-center"
+        >
+          <p className="text-sm font-medium mb-4" style={{ color: '#64748B' }}>
+            Trusted by 500+ adventure businesses across 12 countries
+          </p>
+          <div className="flex items-center justify-center gap-8 opacity-40">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="w-24 h-8 bg-white/10 rounded"></div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

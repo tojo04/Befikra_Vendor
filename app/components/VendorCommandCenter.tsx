@@ -1,145 +1,244 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageSquareText, Map, Banknote, LineChart, Users, FileText } from "lucide-react";
-import clsx from "clsx";
+import { MessageSquareText, Map, Banknote, LineChart, Users, FileText, Zap, TrendingUp } from "lucide-react";
+import Image from "next/image";
 
 const features = [
   {
-    title: "Smart Itinerary Builder",
-    description: "Create stunning, detailed itineraries in minutes with drag-and-drop ease and AI suggestions.",
+    title: "AI Itinerary Builder",
+    description: "Drag, drop, done. Create stunning multi-day itineraries in under 5 minutes. AI suggests routes, timing, and pricing automatically.",
     icon: Map,
-    className: "md:col-span-2 md:row-span-2 bg-blue-600 text-white",
-    contentClassName: "text-blue-100",
-    iconClassName: "text-blue-200",
+    size: "large",
+    gradient: "from-blue-600 to-cyan-500",
+    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&auto=format&fit=crop",
+    metric: { value: "5min", label: "Avg. Creation Time" }
   },
   {
-    title: "Lead Management CRM",
-    description: "Track every lead from initial contact to final booking. Never lose a customer in the chaos.",
+    title: "Lead Intelligence",
+    description: "Every conversation tracked, every opportunity visible. Watch leads flow through your pipeline in real-time.",
     icon: Users,
-    className: "md:col-span-1 bg-white border border-gray-100",
-    contentClassName: "text-gray-500",
-    iconClassName: "text-blue-600",
+    size: "medium",
+    gradient: "from-purple-600 to-pink-500",
+    metric: { value: "+40%", label: "Conversion Rate" }
   },
   {
-    title: "Automated Quotations",
-    description: "Generate instant price quotes based on customer preferences and availability.",
+    title: "Instant Quotes",
+    description: "AI-powered pricing based on season, availability, and competitor analysis. Send professional quotes in seconds.",
     icon: FileText,
-    className: "md:col-span-1 bg-white border border-gray-100",
-    contentClassName: "text-gray-500",
-    iconClassName: "text-purple-600",
+    size: "medium",
+    gradient: "from-orange-500 to-yellow-500",
+    metric: { value: "< 30s", label: "Quote Generation" }
   },
   {
-    title: "Payment Gateway",
-    description: "Secure, integrated payments. Accept deposits and full payments directly through the platform.",
+    title: "Payments & Deposits",
+    description: "Secure payment links, automated reminders, deposit tracking. Get paid faster, chase less.",
     icon: Banknote,
-    className: "md:col-span-1 bg-white border border-gray-100",
-    contentClassName: "text-gray-500",
-    iconClassName: "text-indigo-600",
+    size: "medium",
+    gradient: "from-green-500 to-emerald-500",
+    metric: { value: "100%", label: "Payment Tracking" }
   },
   {
-    title: "Analytics & Reporting",
-    description: "Deep insights into your sales, popular packages, and revenue growth. Make data-driven decisions.",
+    title: "Revenue Analytics",
+    description: "Live dashboards showing booking trends, popular packages, and revenue forecasts. Make decisions with confidence.",
     icon: LineChart,
-    className: "md:col-span-2 bg-slate-900 text-white",
-    contentClassName: "text-gray-400",
-    iconClassName: "text-gray-200",
+    size: "large",
+    gradient: "from-indigo-600 to-blue-500",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
+    metric: { value: "Real-time", label: "Data Updates" }
   },
   {
-    title: "Team Collaboration",
-    description: "Assign leads, share itineraries, and communicate with your team in one shared workspace.",
+    title: "Team Workspace",
+    description: "Assign leads, share itineraries, leave notes. Your entire team stays in sync, no matter where they are.",
     icon: MessageSquareText,
-    className: "md:col-span-1 bg-white border border-gray-100",
-    contentClassName: "text-gray-500",
-    iconClassName: "text-rose-600",
+    size: "medium",
+    gradient: "from-rose-500 to-red-500",
+    metric: { value: "∞", label: "Team Members" }
   },
 ];
 
 export function VendorCommandCenter() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-32 bg-white relative overflow-hidden">
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f020_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f020_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-4xl mx-auto mb-20"
         >
-          <motion.h2 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-slate-900 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
+            style={{ backgroundColor: '#EFF6FF', border: '1px solid #DBEAFE' }}
           >
-            The Ultimate Command Center for Vendor Success
+            <Zap className="w-4 h-4 text-blue-600" />
+            <span className="text-sm font-semibold text-blue-700">All-in-One Platform</span>
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight"
+            style={{ color: '#0F172A' }}
+          >
+            Your Command Center for
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+              {" "}Effortless Growth
+            </span>
           </motion.h2>
+          
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-slate-600"
+            transition={{ delay: 0.2 }}
+            className="text-xl leading-relaxed"
+            style={{ color: '#64748B' }}
           >
-            Everything you need to manage your business, powered by AI.
+            Everything you need to run a modern adventure business—from lead capture to payment collection—powered by AI, built for speed.
           </motion.p>
         </motion.div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(200px,auto)]">
+
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-6 auto-rows-[280px]">
           {features.map((feature, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="group relative cursor-pointer"
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.6, type: "spring" }}
+              className={`
+                group relative rounded-3xl overflow-hidden
+                ${feature.size === 'large' ? 'md:col-span-3 md:row-span-2' : 'md:col-span-2'}
+              `}
             >
               <motion.div
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className={clsx(
-                  "rounded-2xl p-8 flex flex-col justify-between h-full shadow-md relative overflow-hidden",
-                  feature.className
-                )}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+                className="relative h-full bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden"
+                style={{
+                  boxShadow: '0 10px 40px -10px rgba(0,0,0,0.1)'
+                }}
               >
-                {/* Hover gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-500"></div>
-                
-                {/* Animated border on hover */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-br from-blue-400 to-purple-400 bg-clip-border"></div>
-                </div>
-                
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <motion.div 
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.3 }}
-                    className={clsx("w-14 h-14 rounded-xl flex items-center justify-center mb-4 bg-white/10 backdrop-blur-sm group-hover:bg-white/20 transition-all shadow-lg", feature.iconClassName)}
+                {/* Background image for large cards */}
+                {feature.size === 'large' && feature.image && (
+                  <div className="absolute inset-0">
+                    <Image
+                      src={feature.image}
+                      alt={feature.title}
+                      fill
+                      className="object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-white/80"></div>
+                  </div>
+                )}
+
+                {/* Gradient overlay */}
+                <div 
+                  className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                ></div>
+
+                {/* Glow effect */}
+                <div 
+                  className={`absolute -inset-1 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500`}
+                ></div>
+
+                {/* Content */}
+                <div className="relative h-full p-8 flex flex-col justify-between z-10">
+                  <div>
+                    {/* Icon */}
+                    <motion.div
+                      whileHover={{ rotate: 5, scale: 1.1 }}
+                      transition={{ duration: 0.3 }}
+                      className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 shadow-lg`}
+                    >
+                      <feature.icon className="w-7 h-7 text-white" />
+                    </motion.div>
+
+                    {/* Title */}
+                    <h3 className="text-2xl font-bold mb-3" style={{ color: '#0F172A' }}>
+                      {feature.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p 
+                      className={`leading-relaxed ${feature.size === 'large' ? 'text-base' : 'text-sm'}`}
+                      style={{ color: '#64748B' }}
+                    >
+                      {feature.description}
+                    </p>
+                  </div>
+
+                  {/* Metric Badge */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + i * 0.05 }}
+                    className="flex items-center gap-3 mt-auto"
                   >
-                    <feature.icon className="w-7 h-7" />
+                    <div className="flex-1 rounded-2xl px-4 py-3 bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200">
+                      <div className="flex items-baseline gap-2">
+                        <TrendingUp className="w-4 h-4 text-green-600" />
+                        <div className={`font-bold bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent text-xl`}>
+                          {feature.metric.value}
+                        </div>
+                      </div>
+                      <div className="text-xs font-medium text-gray-500 mt-1">
+                        {feature.metric.label}
+                      </div>
+                    </div>
                   </motion.div>
-                  
-                  {/* Title */}
-                  <h3 className="text-xl font-bold mb-3">
-                    {feature.title}
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className={clsx("text-sm leading-relaxed", feature.contentClassName)}>
-                    {feature.description}
-                  </p>
                 </div>
-                
-                {/* Shine effect */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12"></div>
-                </div>
+
+                {/* Shine effect on hover */}
+                <motion.div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"
+                  style={{
+                    background: 'linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%)',
+                  }}
+                  animate={{ x: ['-100%', '200%'] }}
+                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                ></motion.div>
               </motion.div>
             </motion.div>
           ))}
         </div>
+
+        {/* Bottom Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.8 }}
+          className="mt-20 text-center"
+        >
+          <div className="inline-flex items-center gap-12 px-8 py-6 rounded-2xl bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100">
+            {[
+              { value: '500+', label: 'Active Vendors' },
+              { value: '50k+', label: 'Bookings Processed' },
+              { value: '98%', label: 'Customer Satisfaction' }
+            ].map((stat, i) => (
+              <div key={i} className="text-center">
+                <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                  {stat.value}
+                </div>
+                <div className="text-sm font-medium text-gray-600 mt-1">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
