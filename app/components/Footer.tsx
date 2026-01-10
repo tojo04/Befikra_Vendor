@@ -5,7 +5,12 @@ import { ArrowRight } from "lucide-react";
 
 export function Footer() {
   const links = {
-    Products: [
+    Platform: [
+      { name: "AI Vendor Panel", href: "/products/vendor-panel" },
+      { name: "UniChat", href: "/products/unichat" },
+      { name: "Snaplink", href: "/products/snaplink" }
+    ],
+    Tools: [
       { name: "Instagram Automation", href: "/products/instagram" },
       { name: "WhatsApp Automation", href: "/products/whatsapp" },
       { name: "Website Booking Engine", href: "/products/website" }
@@ -30,7 +35,7 @@ export function Footer() {
   return (
     <footer className="bg-slate-50 pt-20 pb-12 border-t border-gray-200">
        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-6 gap-10 mb-16">
+          <div className="grid grid-cols-2 lg:grid-cols-7 gap-10 mb-16">
               <div className="col-span-2 lg:col-span-2">
                  <div className="flex items-center gap-2 mb-6">
                      <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-white font-bold">B</div>
