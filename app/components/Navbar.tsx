@@ -36,14 +36,14 @@ export function Navbar() {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${
-        scrolled
-          ? "bg-white/50 backdrop-blur-xl border-b border-gray-100/50"
-          : "bg-transparent"
-      }`}
+      className="fixed top-4 inset-x-0 z-50 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+      <div className={`max-w-7xl mx-auto rounded-2xl transition-all duration-300 ${
+        scrolled
+          ? "bg-white/90 backdrop-blur-xl shadow-lg border border-gray-200/50"
+          : "bg-white/80 backdrop-blur-md shadow-md border border-gray-200/30"
+      }`}>
+        <div className="flex justify-between items-center h-16 px-6">
           <Link href="/" className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
               B
@@ -99,7 +99,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
+            className="md:hidden mt-2 bg-white/95 backdrop-blur-xl rounded-2xl border border-gray-200/50 shadow-lg overflow-hidden max-w-7xl mx-auto"
         >
             <div className="px-4 py-4 space-y-4 flex flex-col">
               {navLinks.map((item) => (

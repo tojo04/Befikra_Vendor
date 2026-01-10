@@ -1,6 +1,6 @@
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
-import { PerformanceMetrics } from "./components/PerformanceMetrics";
+import PerformanceMetrics from "./components/PerformanceMetrics";
 import { UnifiedDashboard } from "./components/UnifiedDashboard";
 import { ChannelIntegration } from "./components/ChannelIntegration";
 import { VendorCommandCenter } from "./components/VendorCommandCenter";

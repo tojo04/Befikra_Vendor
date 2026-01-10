@@ -1,138 +1,175 @@
-"use client";
+'use client';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-import { motion } from "framer-motion";
-import { Clock, TrendingUp, Users, Zap } from "lucide-react";
+export default function PerformanceMetrics() {
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-const metrics = [
-  {
-    label: "Faster Response Time",
-    value: "3-5x",
-    description: "Across Instagram, WhatsApp & Website",
-    icon: Zap,
-    color: "text-amber-500",
-    bg: "bg-amber-50"
-  },
-  {
-    label: "Weekly Time Saved",
-    value: "10-15h",
-    description: "Eliminating manual replies & follow-ups",
-    icon: Clock,
-    color: "text-blue-500",
-    bg: "bg-blue-50"
-  },
-  {
-    label: "Booking Conversion",
-    value: "+35%",
-    description: "Higher intent from faster, AI-led responses",
-    icon: TrendingUp,
-    color: "text-green-500",
-    bg: "bg-green-50"
-  },
-  {
-    label: "Lead Leakage",
-    value: "0%",
-    description: "Every enquiry is captured & followed up",
-    icon: Users,
-    color: "text-purple-500",
-    bg: "bg-purple-50"
-  }
-];
+  const features = [
+    {
+      type: 'split',
+      bgColor: 'bg-emerald-50',
+      textColor: 'text-slate-900',
+      title: "Seamlessly book and manage trips",
+      description: "Forget multiple tabs. You can book every part of a work trip and see all the details in one helpful itinerary. With our extensive global inventory, Befikra gives you access to 1000s of options and proprietary rates across flights, stays, trains and cars.",
+      image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&auto=format&fit=crop"
+    },
+    {
+      type: 'overlay',
+      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&auto=format&fit=crop",
+      title: "Make trip changes in seconds",
+      description: "Plans change and so can your trips. Rebook or cancel flights and hotels in just a few taps. No need to contact customer support or even open your laptop.",
+      textColor: 'text-white'
+    },
+    {
+      type: 'split',
+      bgColor: 'bg-blue-100',
+      textColor: 'text-slate-900',
+      title: "Submit and approve expenses automatically",
+      description: "Free yourself from piles of receipts. Powered by AI, Befikra automatically captures and categorizes expenses, spots discrepancies, and flags policy breaches for you.",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&auto=format&fit=crop"
+    },
+    {
+      type: 'overlay',
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
+      title: "Real-time analytics and insights",
+      description: "Track everything that matters. Get instant insights into your vendor performance, inventory levels, and customer satisfaction scores all in one powerful dashboard.",
+      textColor: 'text-white'
+    }
+  ];
 
-export function PerformanceMetrics() {
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % features.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + features.length) % features.length);
+  };
+
+  // Auto-advance carousel every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [currentSlide]);
+
   return (
-    <section className="py-24 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+    <section className="py-24 bg-white relative overflow-hidden">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center mb-16"
         >
-          <motion.h2 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="text-blue-600 font-bold tracking-wide uppercase text-sm mb-3"
-          >
-            AI That Speeds Up Work — Not Adds More
-          </motion.h2>
-          <motion.h3 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold text-slate-900 mb-6"
-          >
-            What Vendors See After Switching to Befikra
-          </motion.h3>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-slate-600"
-          >
-            Befikra is built to reduce manual effort and decision fatigue, so vendors spend less time managing and more time growing.
-          </motion.p>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900">
+            Wave goodbye to the work behind the work
+          </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {metrics.map((metric, i) => (
+        {/* Carousel Container */}
+        <div className="relative h-[600px]">
+          <div className="overflow-hidden h-full">
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="group relative cursor-pointer"
+              className="flex h-full transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              <motion.div
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="bg-white p-8 rounded-2xl shadow-md border border-gray-200 relative overflow-hidden h-full"
-              >
-                {/* Hover gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 transition-all duration-500"></div>
-                
-                {/* Animated border on hover */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-br from-blue-400 to-purple-400 bg-clip-border"></div>
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="min-w-full px-4"
+                >
+                  {feature.type === 'split' ? (
+                    // Split Layout: Colored left + Image right
+                    <div className="flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-2xl h-[600px]">
+                      <div className={`${feature.bgColor} w-full md:w-2/5 p-12 flex flex-col justify-center`}>
+                        <h3 className={`text-4xl font-bold ${feature.textColor} mb-6 leading-tight`}>
+                          {feature.title}
+                        </h3>
+                        <p className={`${feature.textColor} text-lg mb-8 leading-relaxed opacity-90`}>
+                          {feature.description}
+                        </p>
+                        <button className="inline-flex items-center gap-2 border-2 border-slate-900 text-slate-900 font-semibold px-6 py-3 rounded-full hover:bg-slate-900 hover:text-white transition-all w-fit">
+                          Learn more
+                          <ChevronRight className="w-5 h-5" />
+                        </button>
+                      </div>
+                      <div className="relative w-full md:w-3/5">
+                        <Image
+                          src={feature.image}
+                          alt={feature.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    // Overlay Layout: Full image with text overlay
+                    <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[600px]">
+                      <Image
+                        src={feature.image}
+                        alt={feature.title}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+                      <div className="absolute inset-0 p-12 flex flex-col justify-end">
+                        <h3 className={`text-5xl font-bold ${feature.textColor} mb-6 leading-tight max-w-2xl`}>
+                          {feature.title}
+                        </h3>
+                        <p className={`${feature.textColor} text-lg mb-8 leading-relaxed max-w-2xl opacity-90`}>
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </div>
-                
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <motion.div 
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                    className={`w-14 h-14 rounded-xl ${metric.bg} flex items-center justify-center mb-6 shadow-sm group-hover:shadow-md transition-all duration-300`}
-                  >
-                    <metric.icon className={`w-7 h-7 ${metric.color}`} />
-                  </motion.div>
-                  
-                  {/* Value */}
-                  <h4 className={`text-4xl font-extrabold ${metric.color} mb-3 tracking-tight`}>
-                    {metric.value}
-                  </h4>
-                  
-                  {/* Label */}
-                  <h5 className="text-base font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
-                    {metric.label}
-                  </h5>
-                  
-                  {/* Description */}
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {metric.description}
-                  </p>
-                </div>
-                
-                {/* Shine effect on hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 group-hover:animate-shimmer"></div>
-                </div>
-              </motion.div>
+              ))}
             </motion.div>
-          ))}
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-all z-10"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-6 h-6 text-slate-900" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-all z-10"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-6 h-6 text-slate-900" />
+          </button>
+        </div>
+
+        {/* Dots Indicator and Show All Features Button */}
+        <div className="flex flex-col items-center gap-6 mt-8">
+          <div className="flex justify-center gap-2">
+            {features.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`h-2 rounded-full transition-all ${
+                  currentSlide === index
+                    ? 'bg-slate-900 w-8'
+                    : 'bg-slate-300 hover:bg-slate-400 w-2'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          <button className="inline-flex items-center gap-2 border-2 border-slate-900 text-slate-900 font-semibold px-8 py-4 rounded-full hover:bg-slate-900 hover:text-white transition-all">
+            Show all features
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       </div>
     </section>
