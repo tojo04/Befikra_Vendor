@@ -4,7 +4,6 @@ import PerformanceMetrics from "./components/PerformanceMetrics";
 import { UnifiedDashboard } from "./components/UnifiedDashboard";
 import { ChannelIntegration } from "./components/ChannelIntegration";
 import { VendorCommandCenter } from "./components/VendorCommandCenter";
-import { BeforeAfter } from "./components/BeforeAfter";
 import { CoreProducts } from "./components/CoreProducts";
 import { Integrations } from "./components/Integrations";
 import { Testimonials } from "./components/Testimonials";
@@ -21,7 +20,6 @@ export default function Home() {
       <UnifiedDashboard />
       <ChannelIntegration />
       <VendorCommandCenter />
-      <BeforeAfter />
       <CoreProducts />
       <Integrations />
       <Testimonials />
