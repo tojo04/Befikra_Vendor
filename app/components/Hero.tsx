@@ -56,7 +56,7 @@ export function Hero() {
              className="text-5xl sm:text-7xl font-extrabold tracking-tight text-white mb-6 max-w-4xl"
         >
           Grow Your Adventure <br className="hidden sm:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+          <span style={{ color: '#3C79D2' }}>
              Business with AI.
           </span>
         </motion.h1>

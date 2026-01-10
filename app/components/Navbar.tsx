@@ -45,7 +45,7 @@ export function Navbar() {
       }`}>
         <div className="flex justify-between items-center h-16 px-6">
           <Link href="/" className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-lg" style={{ backgroundColor: '#3C79D2' }}>
               B
             </div>
             <span className="font-bold text-xl tracking-tight text-slate-900">

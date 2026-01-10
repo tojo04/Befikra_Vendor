@@ -37,7 +37,7 @@ export function VendorCommandCenter() {
       <div 
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(135deg, #0A1E3B 0%, #15325D 50%, #0A1E3B 100%)'
+          backgroundColor: '#0A1E3B'
         }}
       ></div>
 
@@ -89,7 +89,7 @@ export function VendorCommandCenter() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="rounded-3xl overflow-hidden"
               style={{
-                background: 'linear-gradient(135deg, rgba(10,30,59,0.95) 0%, rgba(21,50,93,0.98) 100%)',
+                backgroundColor: 'rgba(10,30,59,0.95)',
                 backdropFilter: 'blur(20px)',
                 boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)'
               }}
@@ -145,7 +145,7 @@ export function VendorCommandCenter() {
                         className="relative h-full rounded-2xl p-8 border transition-all duration-300"
                         style={{
                           borderColor: 'rgba(218,226,250,0.2)',
-                          background: 'linear-gradient(135deg, rgba(60,121,210,0.15) 0%, rgba(218,226,250,0.1) 100%)'
+                          backgroundColor: 'rgba(60,121,210,0.1)'
                         }}
                       >
                         {/* Number Badge */}
@@ -186,9 +186,9 @@ export function VendorCommandCenter() {
                         {/* Stat */}
                         <div className="pt-6 border-t" style={{ borderColor: 'rgba(218,226,250,0.1)' }}>
                           <div 
-                            className="text-3xl font-bold mb-1 bg-clip-text text-transparent"
+                            className="text-3xl font-bold mb-1"
                             style={{
-                              backgroundImage: 'linear-gradient(135deg, #3C79D2 0%, #DAE2FA 100%)'
+                              color: '#3C79D2'
                             }}
                           >
                             {feature.stat}

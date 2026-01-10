@@ -92,7 +92,7 @@ export function ChannelIntegration() {
             className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight"
           >
             Every Channel.<br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400">
+            <span style={{ color: '#3C79D2' }}>
               One Conversation.
             </span>
           </motion.h2>
@@ -179,7 +179,7 @@ export function ChannelIntegration() {
                       style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
                     >
                       <div className="text-xs font-medium" style={{ color: '#64748B' }}>{channel.stats.label}</div>
-                      <div className={`text-lg font-bold bg-gradient-to-r ${channel.color} bg-clip-text text-transparent`}>
+                      <div className="text-lg font-bold" style={{ color: channel.accentColor }}>
                         {channel.stats.value}
                       </div>
                     </motion.div>
