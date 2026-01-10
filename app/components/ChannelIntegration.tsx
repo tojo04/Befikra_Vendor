@@ -45,7 +45,7 @@ const channels = [
 
 export function ChannelIntegration() {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-24" style={{ backgroundColor: '#3C79D2' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -58,7 +58,7 @@ export function ChannelIntegration() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-slate-900 mb-6"
+            className="text-3xl md:text-5xl font-bold text-white mb-6"
           >
             One Platform for All Your Channels
           </motion.h2>
@@ -67,7 +67,7 @@ export function ChannelIntegration() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-slate-600"
+            className="text-lg text-white/90"
           >
             Your customers are everywhere. Now, you can be too—without the burnout.
           </motion.p>

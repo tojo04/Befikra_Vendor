@@ -6,25 +6,27 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <div className="relative pt-32 pb-20 sm:pt-40 sm:pb-24 overflow-hidden bg-white">
+    <div className="relative pt-32 pb-20 sm:pt-40 sm:pb-24 overflow-hidden" style={{ backgroundColor: '#0A1E3B' }}>
       {/* Background Gradients */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-blue-50/80 to-indigo-50/0 rounded-b-[100%] blur-3xl opacity-70" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-blue-400/10 to-transparent rounded-b-[100%] blur-3xl opacity-50" />
         <motion.div 
             animate={{ 
                 scale: [1, 1.1, 1],
-                opacity: [0.3, 0.5, 0.3], 
+                opacity: [0.2, 0.4, 0.2], 
             }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-1/4 -right-20 w-[600px] h-[600px] bg-purple-100 rounded-full blur-[100px] mix-blend-multiply filter"
+            className="absolute top-1/4 -right-20 w-[600px] h-[600px] rounded-full blur-[100px]"
+            style={{ backgroundColor: '#3C79D2', mixBlendMode: 'overlay' }}
         />
         <motion.div 
             animate={{ 
                 scale: [1, 1.2, 1],
-                opacity: [0.3, 0.5, 0.3], 
+                opacity: [0.2, 0.4, 0.2], 
             }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute -top-20 -left-20 w-[600px] h-[600px] bg-blue-100 rounded-full blur-[100px] mix-blend-multiply filter"
+            className="absolute -top-20 -left-20 w-[600px] h-[600px] rounded-full blur-[100px]"
+            style={{ backgroundColor: '#15325D', mixBlendMode: 'overlay' }}
         />
       </div>
 
@@ -35,11 +37,12 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-medium mb-8"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border text-sm font-medium mb-8"
+            style={{ backgroundColor: 'rgba(60, 121, 210, 0.15)', borderColor: '#3C79D2', color: '#DAE2FA' }}
         >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ backgroundColor: '#3C79D2' }}></span>
+              <span className="relative inline-flex rounded-full h-2 w-2" style={{ backgroundColor: '#3C79D2' }}></span>
             </span>
             New: AI-Powered Automation
             <ArrowRight size={14} className="ml-1" />
@@ -50,10 +53,10 @@ export function Hero() {
              initial={{ opacity: 0, y: 20 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.5, delay: 0.1 }}
-             className="text-5xl sm:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 max-w-4xl"
+             className="text-5xl sm:text-7xl font-extrabold tracking-tight text-white mb-6 max-w-4xl"
         >
           Grow Your Adventure <br className="hidden sm:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
              Business with AI.
           </span>
         </motion.h1>
@@ -63,7 +66,8 @@ export function Hero() {
              initial={{ opacity: 0, y: 20 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.5, delay: 0.2 }}
-             className="text-xl text-slate-600 mb-10 max-w-2xl leading-relaxed"
+             className="text-xl mb-10 max-w-2xl leading-relaxed"
+             style={{ color: '#DAE2FA' }}
         >
           The Smart Vendor Platform Built for Treks, Camps & Experience Businesses. Capture more leads, convert bookings faster, and run operations efficiently.
         </motion.p>
@@ -79,10 +83,11 @@ export function Hero() {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.98 }}
           >
-            <Link href="/demo" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 shadow-lg hover:shadow-blue-500/50 hover:shadow-2xl relative overflow-hidden group">
+            <Link href="/demo" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 border-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 shadow-lg relative overflow-hidden group" style={{ backgroundColor: '#3C79D2', borderColor: '#3C79D2' }}>
               <span className="relative z-10">Schedule a Demo</span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                style={{ background: 'linear-gradient(90deg, #3C79D2, #15325D, #3C79D2)' }}
                 animate={{ x: ["-100%", "100%"] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
               />
@@ -92,7 +97,7 @@ export function Hero() {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.98 }}
           >
-            <Link href="/pricing" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-700 transition-all duration-200 bg-white border border-gray-200 rounded-full hover:bg-gray-50 hover:border-blue-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 hover:shadow-lg hover:text-blue-600">
+            <Link href="/pricing" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold transition-all duration-200 border-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 hover:shadow-lg" style={{ backgroundColor: 'rgba(218, 226, 250, 0.1)', borderColor: '#DAE2FA', color: '#DAE2FA', backdropFilter: 'blur(10px)' }}>
               See Pricing
             </Link>
           </motion.div>

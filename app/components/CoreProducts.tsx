@@ -32,7 +32,7 @@ const products = [
 
 export function CoreProducts() {
   return (
-    <section className="py-24 bg-slate-900 text-white">
+    <section className="py-24 text-white" style={{ backgroundColor: '#0A1E3B' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}

@@ -58,7 +58,7 @@ export default function PerformanceMetrics() {
   }, [currentSlide]);
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#15325D' }}>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -66,7 +66,7 @@ export default function PerformanceMetrics() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white">
             Wave goodbye to the work behind the work
           </h2>
         </motion.div>
@@ -135,17 +135,19 @@ export default function PerformanceMetrics() {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-all z-10"
+            className="absolute left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all z-10"
+            style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255, 255, 255, 0.2)' }}
             aria-label="Previous slide"
           >
-            <ChevronLeft className="w-6 h-6 text-slate-900" />
+            <ChevronLeft className="w-6 h-6 text-white" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-all z-10"
+            className="absolute right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all z-10"
+            style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255, 255, 255, 0.2)' }}
             aria-label="Next slide"
           >
-            <ChevronRight className="w-6 h-6 text-slate-900" />
+            <ChevronRight className="w-6 h-6 text-white" />
           </button>
         </div>
 
@@ -156,17 +158,17 @@ export default function PerformanceMetrics() {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`h-2 rounded-full transition-all ${
-                  currentSlide === index
-                    ? 'bg-slate-900 w-8'
-                    : 'bg-slate-300 hover:bg-slate-400 w-2'
-                }`}
+                className={`h-2 rounded-full transition-all`}
+                style={{
+                  backgroundColor: currentSlide === index ? '#DAE2FA' : 'rgba(255, 255, 255, 0.3)',
+                  width: currentSlide === index ? '2rem' : '0.5rem'
+                }}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
 
-          <button className="inline-flex items-center gap-2 border-2 border-slate-900 text-slate-900 font-semibold px-8 py-4 rounded-full hover:bg-slate-900 hover:text-white transition-all">
+          <button className="inline-flex items-center gap-2 border-2 font-semibold px-8 py-4 rounded-full transition-all" style={{ borderColor: '#DAE2FA', color: '#DAE2FA' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#DAE2FA'; e.currentTarget.style.color = '#15325D'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#DAE2FA'; }}>
             Show all features
             <ChevronRight className="w-5 h-5" />
           </button>

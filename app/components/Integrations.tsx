@@ -17,7 +17,7 @@ const integrations = [
 
 export function Integrations() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-24 overflow-hidden" style={{ backgroundColor: '#DAE2FA' }}>
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -28,7 +28,8 @@ export function Integrations() {
            initial={{ opacity: 0, y: 20 }}
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
-           className="text-3xl md:text-5xl font-bold text-slate-900 mb-6"
+           className="text-3xl md:text-5xl font-bold mb-6"
+           style={{ color: '#0A1E3B' }}
          >
            Works With the Tools You Already Use
          </motion.h2>
@@ -37,7 +38,8 @@ export function Integrations() {
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
            transition={{ delay: 0.1 }}
-           className="text-lg text-slate-600"
+           className="text-lg"
+           style={{ color: '#15325D' }}
          >
            Seamless integrations with your favorite platforms.
          </motion.p>

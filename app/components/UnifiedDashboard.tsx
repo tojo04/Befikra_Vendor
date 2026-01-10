@@ -29,7 +29,7 @@ const features = [
 
 export function UnifiedDashboard() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-24 overflow-hidden" style={{ backgroundColor: '#DAE2FA' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -37,7 +37,8 @@ export function UnifiedDashboard() {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-medium mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full border text-sm font-medium mb-6"
+              style={{ backgroundColor: 'rgba(60, 121, 210, 0.1)', borderColor: '#3C79D2', color: '#15325D' }}
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
