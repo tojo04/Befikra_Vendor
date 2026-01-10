@@ -94,7 +94,7 @@ export function CoreProducts() {
                   </motion.div>
                   
                   {/* Title */}
-                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors duration-300">
+                  <h3 className="text-2xl font-bold mb-4 text-white transition-colors duration-300">
                     {product.title}
                   </h3>
                   

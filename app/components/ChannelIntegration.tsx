@@ -149,8 +149,12 @@ export function ChannelIntegration() {
                     <motion.div 
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ duration: 0.3 }}
-                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${channel.color} flex items-center justify-center shadow-2xl p-3 relative`}
-                      style={{ boxShadow: `0 8px 32px ${channel.accentColor}40` }}
+                      className={`w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl relative`}
+                      style={{ 
+                        background: channel.name === 'Instagram' ? 'white' : (channel.name === 'WhatsApp' ? '#25D366' : `linear-gradient(135deg, ${channel.accentColor}, ${channel.accentColor}dd)`),
+                        padding: channel.name === 'Instagram' ? '12px' : '12px',
+                        boxShadow: `0 8px 32px ${channel.accentColor}40` 
+                      }}
                     >
                       {channel.useIcon ? (
                         <div className="relative w-full h-full">
@@ -158,7 +162,7 @@ export function ChannelIntegration() {
                             src={channel.logo}
                             alt={channel.name}
                             fill
-                            className="object-contain filter brightness-0 invert"
+                            className="object-contain"
                           />
                         </div>
                       ) : (

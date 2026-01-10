@@ -1,244 +1,224 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageSquareText, Map, Banknote, LineChart, Users, FileText, Zap, TrendingUp } from "lucide-react";
 import Image from "next/image";
 
 const features = [
   {
-    title: "AI Itinerary Builder",
-    description: "Drag, drop, done. Create stunning multi-day itineraries in under 5 minutes. AI suggests routes, timing, and pricing automatically.",
-    icon: Map,
-    size: "large",
-    gradient: "from-blue-600 to-cyan-500",
-    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&auto=format&fit=crop",
-    metric: { value: "5min", label: "Avg. Creation Time" }
+    number: "01",
+    label: "Unified Operations",
+    title: "One dashboard to rule them all",
+    description: "Manage every booking, conversation, and payment from a single, intelligent interface. No more juggling between apps—your entire business lives here.",
+    stat: "10x faster",
+    statLabel: "Than traditional tools"
   },
   {
-    title: "Lead Intelligence",
-    description: "Every conversation tracked, every opportunity visible. Watch leads flow through your pipeline in real-time.",
-    icon: Users,
-    size: "medium",
-    gradient: "from-purple-600 to-pink-500",
-    metric: { value: "+40%", label: "Conversion Rate" }
+    number: "02",
+    label: "Smart Automation",
+    title: "AI handles the heavy lifting",
+    description: "From quote generation to itinerary creation, let artificial intelligence do the repetitive work while you focus on delivering unforgettable experiences.",
+    stat: "95% time saved",
+    statLabel: "On manual tasks"
   },
   {
-    title: "Instant Quotes",
-    description: "AI-powered pricing based on season, availability, and competitor analysis. Send professional quotes in seconds.",
-    icon: FileText,
-    size: "medium",
-    gradient: "from-orange-500 to-yellow-500",
-    metric: { value: "< 30s", label: "Quote Generation" }
-  },
-  {
-    title: "Payments & Deposits",
-    description: "Secure payment links, automated reminders, deposit tracking. Get paid faster, chase less.",
-    icon: Banknote,
-    size: "medium",
-    gradient: "from-green-500 to-emerald-500",
-    metric: { value: "100%", label: "Payment Tracking" }
-  },
-  {
-    title: "Revenue Analytics",
-    description: "Live dashboards showing booking trends, popular packages, and revenue forecasts. Make decisions with confidence.",
-    icon: LineChart,
-    size: "large",
-    gradient: "from-indigo-600 to-blue-500",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
-    metric: { value: "Real-time", label: "Data Updates" }
-  },
-  {
-    title: "Team Workspace",
-    description: "Assign leads, share itineraries, leave notes. Your entire team stays in sync, no matter where they are.",
-    icon: MessageSquareText,
-    size: "medium",
-    gradient: "from-rose-500 to-red-500",
-    metric: { value: "∞", label: "Team Members" }
+    number: "03",
+    label: "Growth Analytics",
+    title: "Data that drives decisions",
+    description: "Real-time insights into your revenue, conversion rates, and customer behavior. Know what's working, optimize what's not, and scale what matters.",
+    stat: "+67% growth",
+    statLabel: "Average yearly increase"
   },
 ];
 
 export function VendorCommandCenter() {
   return (
-    <section className="py-32 bg-white relative overflow-hidden">
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f020_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f020_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
+    <section className="relative overflow-hidden">
+      {/* Dark blue background with gradient */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(135deg, #0A1E3B 0%, #15325D 50%, #0A1E3B 100%)'
+        }}
+      ></div>
+
+      {/* Subtle pattern overlay */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)',
+          backgroundSize: '40px 40px'
+        }}></div>
+      </div>
+
+      <div className="relative z-10">
+        {/* Hero Image Section */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 1.05 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-4xl mx-auto mb-20"
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="relative h-[60vh] min-h-[500px] max-h-[700px] overflow-hidden"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-            style={{ backgroundColor: '#EFF6FF', border: '1px solid #DBEAFE' }}
-          >
-            <Zap className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-semibold text-blue-700">All-in-One Platform</span>
-          </motion.div>
+          {/* Gradient overlays for depth */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0A1E3B] z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1E3B]/40 via-transparent to-[#0A1E3B]/40 z-10"></div>
           
-          <motion.h2 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight"
-            style={{ color: '#0F172A' }}
-          >
-            Your Command Center for
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
-              {" "}Effortless Growth
-            </span>
-          </motion.h2>
-          
-          <motion.p 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-xl leading-relaxed"
-            style={{ color: '#64748B' }}
-          >
-            Everything you need to run a modern adventure business—from lead capture to payment collection—powered by AI, built for speed.
-          </motion.p>
+          {/* Hero Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&auto=format&fit=crop&q=80"
+              alt="Team collaboration"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+
+          {/* Ambient lighting effects */}
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full blur-3xl z-5" style={{ backgroundColor: 'rgba(60,121,210,0.2)' }}></div>
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full blur-3xl z-5" style={{ backgroundColor: 'rgba(218,226,250,0.15)' }}></div>
         </motion.div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-6 auto-rows-[280px]">
-          {features.map((feature, i) => (
+        {/* Content Section - Overlapping the image */}
+        <div className="relative -mt-32 z-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Main content card with rounded corners */}
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.6, type: "spring" }}
-              className={`
-                group relative rounded-3xl overflow-hidden
-                ${feature.size === 'large' ? 'md:col-span-3 md:row-span-2' : 'md:col-span-2'}
-              `}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="rounded-3xl overflow-hidden"
+              style={{
+                background: 'linear-gradient(135deg, rgba(10,30,59,0.95) 0%, rgba(21,50,93,0.98) 100%)',
+                backdropFilter: 'blur(20px)',
+                boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)'
+              }}
             >
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                className="relative h-full bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden"
-                style={{
-                  boxShadow: '0 10px 40px -10px rgba(0,0,0,0.1)'
-                }}
-              >
-                {/* Background image for large cards */}
-                {feature.size === 'large' && feature.image && (
-                  <div className="absolute inset-0">
-                    <Image
-                      src={feature.image}
-                      alt={feature.title}
-                      fill
-                      className="object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-white/80"></div>
-                  </div>
-                )}
-
-                {/* Gradient overlay */}
-                <div 
-                  className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
-                ></div>
-
-                {/* Glow effect */}
-                <div 
-                  className={`absolute -inset-1 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500`}
-                ></div>
-
-                {/* Content */}
-                <div className="relative h-full p-8 flex flex-col justify-between z-10">
-                  <div>
-                    {/* Icon */}
-                    <motion.div
-                      whileHover={{ rotate: 5, scale: 1.1 }}
-                      transition={{ duration: 0.3 }}
-                      className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 shadow-lg`}
-                    >
-                      <feature.icon className="w-7 h-7 text-white" />
-                    </motion.div>
-
-                    {/* Title */}
-                    <h3 className="text-2xl font-bold mb-3" style={{ color: '#0F172A' }}>
-                      {feature.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p 
-                      className={`leading-relaxed ${feature.size === 'large' ? 'text-base' : 'text-sm'}`}
-                      style={{ color: '#64748B' }}
-                    >
-                      {feature.description}
-                    </p>
-                  </div>
-
-                  {/* Metric Badge */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 + i * 0.05 }}
-                    className="flex items-center gap-3 mt-auto"
-                  >
-                    <div className="flex-1 rounded-2xl px-4 py-3 bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200">
-                      <div className="flex items-baseline gap-2">
-                        <TrendingUp className="w-4 h-4 text-green-600" />
-                        <div className={`font-bold bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent text-xl`}>
-                          {feature.metric.value}
-                        </div>
-                      </div>
-                      <div className="text-xs font-medium text-gray-500 mt-1">
-                        {feature.metric.label}
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-
-                {/* Shine effect on hover */}
+              <div className="px-8 sm:px-16 py-20">
+                {/* Badge */}
                 <motion.div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"
-                  style={{
-                    background: 'linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%)',
-                  }}
-                  animate={{ x: ['-100%', '200%'] }}
-                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                ></motion.div>
-              </motion.div>
-            </motion.div>
-          ))}
-        </div>
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 }}
+                  className="text-center mb-8"
+                >
+                  <span 
+                    className="inline-block px-6 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
+                    style={{
+                      backgroundColor: 'rgba(218,226,250,0.2)',
+                      color: '#DAE2FA',
+                      border: '1px solid rgba(218,226,250,0.3)'
+                    }}
+                  >
+                    Enterprise-Grade Platform
+                  </span>
+                </motion.div>
 
-        {/* Bottom Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.8 }}
-          className="mt-20 text-center"
-        >
-          <div className="inline-flex items-center gap-12 px-8 py-6 rounded-2xl bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100">
-            {[
-              { value: '500+', label: 'Active Vendors' },
-              { value: '50k+', label: 'Bookings Processed' },
-              { value: '98%', label: 'Customer Satisfaction' }
-            ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                  {stat.value}
-                </div>
-                <div className="text-sm font-medium text-gray-600 mt-1">
-                  {stat.label}
+                {/* Main Heading */}
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 }}
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-20 leading-tight"
+                  style={{ color: '#ffffff' }}
+                >
+                  Your Command Center for Effortless Growth
+                </motion.h2>
+
+                {/* Three Column Features */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                  {features.map((feature, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.6 + i * 0.1, duration: 0.6 }}
+                      className="group relative"
+                    >
+                      {/* Card with border and hover effect */}
+                      <motion.div
+                        whileHover={{ y: -8 }}
+                        transition={{ duration: 0.3 }}
+                        className="relative h-full rounded-2xl p-8 border transition-all duration-300"
+                        style={{
+                          borderColor: 'rgba(218,226,250,0.2)',
+                          background: 'linear-gradient(135deg, rgba(60,121,210,0.15) 0%, rgba(218,226,250,0.1) 100%)'
+                        }}
+                      >
+                        {/* Number Badge */}
+                        <div className="flex items-start justify-between mb-6">
+                          <span 
+                            className="text-7xl font-black opacity-20"
+                            style={{ color: '#DAE2FA' }}
+                          >
+                            {feature.number}
+                          </span>
+                          <span 
+                            className="text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full"
+                            style={{
+                              backgroundColor: 'rgba(60,121,210,0.15)',
+                              color: '#DAE2FA'
+                            }}
+                          >
+                            {feature.label}
+                          </span>
+                        </div>
+
+                        {/* Title */}
+                        <h3 
+                          className="text-2xl font-bold mb-4 leading-tight transition-colors duration-300 group-hover:text-white"
+                          style={{ color: '#ffffff' }}
+                        >
+                          {feature.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p 
+                          className="text-base leading-relaxed mb-6"
+                          style={{ color: 'rgba(255,255,255,0.7)' }}
+                        >
+                          {feature.description}
+                        </p>
+
+                        {/* Stat */}
+                        <div className="pt-6 border-t" style={{ borderColor: 'rgba(218,226,250,0.1)' }}>
+                          <div 
+                            className="text-3xl font-bold mb-1 bg-clip-text text-transparent"
+                            style={{
+                              backgroundImage: 'linear-gradient(135deg, #3C79D2 0%, #DAE2FA 100%)'
+                            }}
+                          >
+                            {feature.stat}
+                          </div>
+                          <div 
+                            className="text-sm font-medium"
+                            style={{ color: 'rgba(255,255,255,0.6)' }}
+                          >
+                            {feature.statLabel}
+                          </div>
+                        </div>
+
+                        {/* Glow effect on hover */}
+                        <div 
+                          className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                          style={{
+                            background: 'radial-gradient(circle at center, rgba(60,121,210,0.15) 0%, transparent 70%)',
+                          }}
+                        ></div>
+                      </motion.div>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
-            ))}
+            </motion.div>
           </div>
-        </motion.div>
+
+          {/* Bottom spacing */}
+          <div className="h-32"></div>
+        </div>
       </div>
     </section>
   );
