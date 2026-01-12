@@ -188,7 +188,7 @@ export function UnifiedDashboard() {
                       ) : (
                         <div 
                           className="absolute inset-0"
-                          style={{ backgroundColor: feature.bgColor }}
+                          style={{ backgroundColor: '#1e293b' }}
                         ></div>
                       )}
 
