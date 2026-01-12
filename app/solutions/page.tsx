@@ -13,10 +13,17 @@ import {
   BarChart3, 
   Calendar,
   CheckCircle2,
-  ArrowRight
+  ArrowRight,
+  XCircle,
+  Star,
+  Quote,
+  ChevronLeft,
+  ChevronRight,
+  Sparkles
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const industries = [
   {
@@ -81,29 +88,6 @@ const industries = [
   }
 ];
 
-const reasons = [
-  {
-    title: "Group Booking Built-in",
-    description: "Built for group bookings & capacities instantly.",
-    icon: Users
-  },
-  {
-    title: "Omnichannel",
-    description: "Works across Instagram, WhatsApp & websites.",
-    icon: MessageCircle
-  },
-  {
-    title: "AI Powered",
-    description: "AI handles repetitive conversations 24/7.",
-    icon: Zap
-  },
-  {
-    title: "Centralized Ops",
-    description: "One dashboard for sales & operations.",
-    icon: BarChart3
-  }
-];
-
 const businessModels = [
   "Weekend Treks",
   "Multi-day Expeditions",
@@ -111,7 +95,80 @@ const businessModels = [
   "Group Tours & Curated Trips"
 ];
 
+const useCaseSlides = [
+  {
+    type: 'split',
+    bgColor: 'bg-emerald-50',
+    textColor: 'text-slate-900',
+    title: "Group Booking Made Simple",
+    description: "Manage trek batches, capacity limits, and waiting lists effortlessly. Track group sizes in real-time and automatically notify customers when spots open up. Perfect for high-demand weekend treks and expeditions.",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    type: 'overlay',
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop",
+    title: "AI Responds Instantly on Instagram & WhatsApp",
+    description: "Never lose a lead while you sleep. Our AI qualifies enquiries, answers FAQs, shares itineraries, and sends booking links automatically—across all your channels, 24/7.",
+    textColor: 'text-white'
+  },
+  {
+    type: 'split',
+    bgColor: 'bg-blue-50',
+    textColor: 'text-slate-900',
+    title: "One Dashboard for Everything",
+    description: "Track bookings, payments, customer communications, and performance metrics in one unified panel. No more switching between WhatsApp, Excel, and payment apps.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+  },
+  {
+    type: 'overlay',
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+    title: "Real-Time Analytics for Better Decisions",
+    description: "Know which treks are filling fastest, which channels bring the most bookings, and where your revenue is coming from. Make data-driven decisions to grow your business.",
+    textColor: 'text-white'
+  }
+];
+
+const testimonials = [
+  {
+    quote: "Befikra helped us double our trek bookings in peak season. The AI handles 90% of enquiries automatically!",
+    author: "Vikram Sharma",
+    role: "Himalayan Explorers",
+    image: "https://randomuser.me/api/portraits/men/32.jpg"
+  },
+  {
+    quote: "Managing group capacities was a nightmare. Now it's automated and we never overbook. Game changer!",
+    author: "Priya Desai",
+    role: "Adventure Trails India",
+    image: "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    quote: "From Instagram DM to confirmed booking in under 5 minutes. Our conversion rate jumped 60%.",
+    author: "Arjun Mehta",
+    role: "Peak Adventures",
+    image: "https://randomuser.me/api/portraits/men/86.jpg"
+  }
+];
+
 export default function SolutionsPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % useCaseSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + useCaseSlides.length) % useCaseSlides.length);
+  };
+
+  // Auto-advance carousel every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % useCaseSlides.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <main className="min-h-screen bg-white">
       <Navbar />
@@ -215,6 +272,7 @@ export default function SolutionsPage() {
                     alt={industry.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
@@ -224,42 +282,213 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* Why Choose Section */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
-              Why Experience Businesses Choose Befikra
+      {/* Use Case Carousel */}
+      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#15325D' }}>
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+              How Befikra Powers Your Operations
             </h2>
-            <p className="text-lg text-slate-600">
-              Because generic CRMs and booking tools don’t understand experience-based operations. 
-              <br/>
-              <span className="font-semibold text-slate-900">This is not software adapted for travel. This is software built for it.</span>
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+              From first enquiry to confirmed booking, we handle it all
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {reasons.map((reason, i) => (
+          {/* Carousel Container */}
+          <div className="relative h-[600px]">
+            <div className="overflow-hidden h-full">
+              <motion.div
+                className="flex h-full transition-transform duration-500 ease-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {useCaseSlides.map((slide, index) => (
+                  <div
+                    key={index}
+                    className="min-w-full px-4"
+                  >
+                    {slide.type === 'split' ? (
+                      // Split Layout
+                      <div className="flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-2xl h-[600px]">
+                        <div className={`${slide.bgColor} w-full md:w-2/5 p-12 flex flex-col justify-center`}>
+                          <h3 className={`text-4xl font-bold ${slide.textColor} mb-6 leading-tight`}>
+                            {slide.title}
+                          </h3>
+                          <p className={`${slide.textColor} text-lg mb-8 leading-relaxed opacity-90`}>
+                            {slide.description}
+                          </p>
+                          <button className="inline-flex items-center gap-2 border-2 border-slate-900 text-slate-900 font-semibold px-6 py-3 rounded-full hover:bg-slate-900 hover:text-white transition-all w-fit">
+                            Learn more
+                            <ChevronRight className="w-5 h-5" />
+                          </button>
+                        </div>
+                        <div className="w-full md:w-3/5 relative">
+                          <Image
+                            src={slide.image}
+                            alt={slide.title}
+                            fill
+                            className="object-cover"
+                            unoptimized
+                            priority
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      // Overlay Layout
+                      <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[600px]">
+                        <Image
+                          src={slide.image}
+                          alt={slide.title}
+                          fill
+                          className="object-cover"
+                          unoptimized
+                          priority
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-12 text-white">
+                          <h3 className="text-4xl font-bold mb-4 leading-tight">
+                            {slide.title}
+                          </h3>
+                          <p className="text-lg text-white/90 max-w-2xl mb-6 leading-relaxed">
+                            {slide.description}
+                          </p>
+                          <button className="inline-flex items-center gap-2 bg-white text-slate-900 font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition-all">
+                            Explore feature
+                            <ChevronRight className="w-5 h-5" />
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-8 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-slate-900 p-3 rounded-full shadow-lg transition-all hover:scale-110 z-10"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-8 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-slate-900 p-3 rounded-full shadow-lg transition-all hover:scale-110 z-10"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+
+            {/* Slide Indicators */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              {useCaseSlides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`h-2 rounded-full transition-all ${
+                    currentSlide === index ? 'w-8 bg-white' : 'w-2 bg-white/50'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <motion.h2 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-bold text-slate-900 mb-6"
+            >
+              Trusted by Leading Adventure Businesses
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-600"
+            >
+              Join 500+ trekking agencies, adventure operators, and travel curators growing with Befikra
+            </motion.p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow"
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="group relative cursor-pointer h-full"
               >
-                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6">
-                  <reason.icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{reason.title}</h3>
-                <p className="text-slate-600">{reason.description}</p>
+                <motion.div
+                  whileHover={{ y: -8 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="bg-white p-8 rounded-2xl shadow-md border border-gray-200 relative overflow-hidden h-full flex flex-col"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 transition-all duration-500"></div>
+                  
+                  <div className="relative z-10 flex flex-col h-full">
+                    <Quote className="w-10 h-10 text-blue-200 mb-6 fill-blue-100 group-hover:text-blue-300 transition-colors duration-300" />
+                    
+                    <p className="text-slate-700 text-base mb-8 leading-relaxed font-medium flex-grow group-hover:text-slate-900 transition-colors duration-300">
+                      "{testimonial.quote}"
+                    </p>
+                    
+                    <div className="flex items-center gap-4 mt-auto">
+                      <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden relative ring-2 ring-transparent group-hover:ring-blue-400/50 transition-all duration-300">
+                        <Image 
+                          src={testimonial.image} 
+                          alt={testimonial.author}
+                          fill
+                          className="object-cover"
+                          unoptimized
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">
+                          {testimonial.author}
+                        </h4>
+                        <p className="text-slate-500 text-sm">
+                          {testimonial.role}
+                        </p>
+                      </div>
+                      <div className="flex gap-0.5">
+                        {[1,2,3,4,5].map(star => (
+                          <Star key={star} className="w-4 h-4 text-amber-400 fill-amber-400" />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Business Models Section */}
       <section className="py-24 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-slate-900 rounded-[2.5rem] p-12 md:p-20 text-center relative overflow-hidden">
