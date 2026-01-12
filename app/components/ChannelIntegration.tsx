@@ -160,7 +160,7 @@ export function ChannelIntegration() {
                         boxShadow: `0 8px 32px ${channel.accentColor}40` 
                       }}
                     >
-                      {channel.useIcon ? (
+                      {channel.useIcon && channel.logo ? (
                         <div className="relative w-full h-full">
                           <Image
                             src={channel.logo}
@@ -169,9 +169,9 @@ export function ChannelIntegration() {
                             className="object-contain"
                           />
                         </div>
-                      ) : (
+                      ) : channel.icon ? (
                         <channel.icon className="w-8 h-8 text-white" />
-                      )}
+                      ) : null}
                     </motion.div>
 
                     {/* Stats Badge */}
