@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Navbar } from "../components/Navbar";
 import { Footer, CTA } from "../components/Footer";
-import { Check, X, HelpCircle, ArrowRight } from "lucide-react";
+import { Check, X, HelpCircle, ArrowRight, Sparkles, Zap, Shield } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -21,7 +21,8 @@ const plans = [
     ],
     highlight: false,
     cta: "Start Free Trial",
-    color: "blue"
+    color: "blue",
+    icon: Zap
   },
   {
     name: "Premium",
@@ -38,7 +39,8 @@ const plans = [
     highlight: true,
     cta: "Get Started",
     popular: true,
-    color: "violet"
+    color: "violet",
+    icon: Sparkles
   },
   {
     name: "Pro",
@@ -54,7 +56,8 @@ const plans = [
     ],
     highlight: false,
     cta: "Contact Sales",
-    color: "emerald"
+    color: "emerald",
+    icon: Shield
   }
 ];
 
@@ -96,46 +99,52 @@ export default function PricingPage() {
   const [annual, setAnnual] = useState(true);
 
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen bg-white">
       <Navbar />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
          <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-0 pointer-events-none">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-blue-100/50 rounded-full blur-3xl opacity-50" />
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-50 rounded-full blur-3xl opacity-60 translate-x-1/3 -translate-y-1/4" />
+            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-50 rounded-full blur-3xl opacity-60 -translate-x-1/3 translate-y-1/4" />
          </div>
 
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <motion.h1 
+            <motion.div
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
-               className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight"
+               transition={{ duration: 0.5 }}
             >
-              Simple, Transparent <span className="text-blue-600">Pricing</span>
-            </motion.h1>
-            <motion.p 
-               initial={{ opacity: 0, y: 20 }}
-               animate={{ opacity: 1, y: 0 }}
-               transition={{ delay: 0.1 }}
-               className="text-xl text-slate-600 max-w-2xl mx-auto mb-10"
-            >
-              Choose the right plan for your adventure business. No hidden fees. Cancel anytime.
-            </motion.p>
+               <span className="inline-block py-1 px-3 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold mb-6">
+                  Flexible Pricing
+               </span>
+               <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
+                  Simple, Transparent <span className="text-blue-600">Pricing</span>
+               </h1>
+               <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+                  Choose the right plan for your adventure business. No hidden fees. Cancel anytime.
+               </p>
+            </motion.div>
             
             {/* Toggle */}
-            <div className="flex items-center justify-center gap-4 mb-16">
-                <span className={`text-sm font-semibold ${!annual ? "text-slate-900" : "text-slate-500"}`}>Monthly</span>
+            <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ delay: 0.2 }}
+               className="flex items-center justify-center gap-4 mb-16"
+            >
+                <span className={`text-sm font-semibold transition-colors ${!annual ? "text-slate-900" : "text-slate-500"}`}>Monthly</span>
                 <button 
                   onClick={() => setAnnual(!annual)}
-                  className="w-14 h-8 bg-slate-900 rounded-full p-1 relative transition-colors"
+                  className="w-14 h-8 bg-slate-900 rounded-full p-1 relative transition-colors hover:bg-slate-800"
                 >
                     <div className={`w-6 h-6 bg-white rounded-full transition-transform ${annual ? "translate-x-6" : "translate-x-0"}`} />
                 </button>
                 <div className="flex items-center gap-2">
-                    <span className={`text-sm font-semibold ${annual ? "text-slate-900" : "text-slate-500"}`}>Annually</span>
-                    <span className="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full">-20%</span>
+                    <span className={`text-sm font-semibold transition-colors ${annual ? "text-slate-900" : "text-slate-500"}`}>Annually</span>
+                    <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-2.5 py-1 rounded-full">Save 20%</span>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Pricing Cards */}
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -144,11 +153,12 @@ export default function PricingPage() {
                         key={plan.name}
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: i * 0.1 + 0.2 }}
-                        className={`relative rounded-2xl p-8 text-left border ${
+                        whileHover={{ y: -8 }}
+                        transition={{ delay: i * 0.1 + 0.3, duration: 0.3 }}
+                        className={`relative rounded-3xl p-8 text-left border-2 ${
                             plan.highlight 
-                            ? "bg-slate-900 text-white border-slate-900 shadow-xl scale-105 z-10" 
-                            : "bg-white text-slate-900 border-slate-200 hover:border-blue-200 hover:shadow-lg transition-all"
+                            ? "bg-slate-900 text-white border-slate-900 shadow-2xl scale-105 z-10" 
+                            : "bg-white text-slate-900 border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all"
                         }`}
                     >
                         {plan.popular && (
@@ -156,27 +166,34 @@ export default function PricingPage() {
                                 Most Popular
                             </div>
                         )}
-                        <h3 className={`text-xl font-bold mb-2 ${plan.highlight ? "text-white" : "text-slate-900"}`}>{plan.name}</h3>
-                        <p className={`text-sm mb-6 h-10 ${plan.highlight ? "text-slate-300" : "text-slate-500"}`}>{plan.description}</p>
                         
-                        <div className="mb-6">
-                            <span className="text-4xl font-extrabold">₹{annual ? plan.price : (parseInt(plan.price.replace(/,/g, '')) * 1.2).toLocaleString().split('.')[0]}</span>
+                        <div className={`w-12 h-12 rounded-2xl ${plan.highlight ? "bg-white/10" : "bg-blue-50"} flex items-center justify-center mb-6`}>
+                           <plan.icon className={`w-6 h-6 ${plan.highlight ? "text-blue-400" : "text-blue-600"}`} />
+                        </div>
+
+                        <h3 className={`text-2xl font-bold mb-2 ${plan.highlight ? "text-white" : "text-slate-900"}`}>{plan.name}</h3>
+                        <p className={`text-sm mb-6 ${plan.highlight ? "text-slate-300" : "text-slate-500"}`}>{plan.description}</p>
+                        
+                        <div className="mb-8">
+                            <span className="text-5xl font-extrabold">₹{annual ? plan.price : (parseInt(plan.price.replace(/,/g, '')) * 1.2).toLocaleString().split('.')[0]}</span>
                             <span className={`text-sm ${plan.highlight ? "text-slate-400" : "text-slate-500"}`}>/month</span>
+                            {annual && <p className="text-xs text-slate-400 mt-2">Billed annually</p>}
                         </div>
                         
-                        <button className={`w-full py-3 rounded-lg font-bold mb-8 transition-all ${
+                        <button className={`w-full py-4 rounded-xl font-bold mb-8 transition-all flex items-center justify-center gap-2 ${
                             plan.highlight 
-                            ? "bg-white text-slate-900 hover:bg-blue-50" 
-                            : "bg-slate-100 text-slate-900 hover:bg-slate-200"
+                            ? "bg-white text-slate-900 hover:bg-blue-50 hover:scale-105" 
+                            : "bg-slate-900 text-white hover:bg-slate-800 hover:scale-105"
                         }`}>
                             {plan.cta}
+                            <ArrowRight className="w-4 h-4" />
                         </button>
                         
-                        <ul className="space-y-4 mb-4">
+                        <ul className="space-y-4">
                             {plan.features.map((feature, idx) => (
                                 <li key={idx} className="flex items-start gap-3">
-                                    <Check className={`w-5 h-5 shrink-0 ${plan.highlight ? "text-blue-400" : "text-blue-600"}`} />
-                                    <span className={`text-sm ${plan.highlight ? "text-slate-300" : "text-slate-600"}`}>{feature}</span>
+                                    <Check className={`w-5 h-5 shrink-0 mt-0.5 ${plan.highlight ? "text-emerald-400" : "text-emerald-600"}`} />
+                                    <span className={`text-sm ${plan.highlight ? "text-slate-200" : "text-slate-600"}`}>{feature}</span>
                                 </li>
                             ))}
                         </ul>
@@ -187,90 +204,143 @@ export default function PricingPage() {
       </section>
 
       {/* Comparison Table */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-slate-900">Compare Plans</h2>
-                <p className="text-slate-600 mt-4">Find the perfect features for your team structure.</p>
-            </div>
+            <motion.div 
+               initial={{ opacity: 0, y: 30 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               className="text-center mb-16"
+            >
+                <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">Compare All Features</h2>
+                <p className="text-lg text-slate-600">Find the perfect features for your team structure.</p>
+            </motion.div>
 
-            <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
-                    <thead>
-                        <tr className="border-b border-gray-200">
-                            <th className="py-4 px-6 text-slate-500 font-medium text-lg w-1/3">Features</th>
-                            <th className="py-4 px-6 text-slate-900 font-bold text-lg w-1/5">Starter</th>
-                            <th className="py-4 px-6 text-blue-600 font-bold text-lg w-1/5">Premium</th>
-                            <th className="py-4 px-6 text-slate-900 font-bold text-lg w-1/5">Pro</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {featuresComparison.map((section, idx) => (
-                            <>
-                                <tr key={section.category} className="bg-slate-50/50">
-                                    <td colSpan={4} className="py-3 px-6 text-xs font-bold text-slate-400 uppercase tracking-wider pt-8">
-                                        {section.category}
-                                    </td>
-                                </tr>
-                                {section.features.map((feat, i) => (
-                                    <tr key={i} className="border-b border-gray-100 hover:bg-slate-50 transition-colors">
-                                        <td className="py-4 px-6 text-slate-600 font-medium flex items-center gap-2">
-                                            {feat.name}
-                                            <HelpCircle className="w-4 h-4 text-slate-400 cursor-help opacity-50 hover:opacity-100" />
-                                        </td>
-                                        <td className="py-4 px-6 text-slate-700">
-                                            {typeof feat.starter === 'boolean' ? (
-                                                feat.starter ? <Check className="w-5 h-5 text-green-500" /> : <X className="w-5 h-5 text-slate-300" />
-                                            ) : (
-                                                <span className="text-sm font-semibold">{feat.starter}</span>
-                                            )}
-                                        </td>
-                                        <td className="py-4 px-6 text-slate-900 font-semibold bg-blue-50/10">
-                                            {typeof feat.premium === 'boolean' ? (
-                                                feat.premium ? <Check className="w-5 h-5 text-green-500" /> : <X className="w-5 h-5 text-slate-300" />
-                                            ) : (
-                                                <span className="text-sm font-bold text-blue-600">{feat.premium}</span>
-                                            )}
-                                        </td>
-                                        <td className="py-4 px-6 text-slate-700">
-                                            {typeof feat.pro === 'boolean' ? (
-                                                feat.pro ? <Check className="w-5 h-5 text-green-500" /> : <X className="w-5 h-5 text-slate-300" />
-                                            ) : (
-                                                <span className="text-sm font-semibold">{feat.pro}</span>
-                                            )}
+            <motion.div 
+               initial={{ opacity: 0, y: 30 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ delay: 0.2 }}
+               className="bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden"
+            >
+                <div className="overflow-x-auto">
+                    <table className="w-full text-left border-collapse">
+                        <thead>
+                            <tr className="border-b border-slate-200 bg-slate-50">
+                                <th className="py-5 px-6 text-slate-600 font-semibold text-lg w-1/3">Features</th>
+                                <th className="py-5 px-6 text-slate-900 font-bold text-lg w-1/5">Starter</th>
+                                <th className="py-5 px-6 text-blue-600 font-bold text-lg w-1/5 bg-blue-50/50">Premium</th>
+                                <th className="py-5 px-6 text-slate-900 font-bold text-lg w-1/5">Pro</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {featuresComparison.map((section, idx) => (
+                                <>
+                                    <tr key={section.category} className="bg-slate-50">
+                                        <td colSpan={4} className="py-4 px-6 text-xs font-bold text-slate-500 uppercase tracking-wider pt-8">
+                                            {section.category}
                                         </td>
                                     </tr>
-                                ))}
-                            </>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+                                    {section.features.map((feat, i) => (
+                                        <tr key={i} className="border-b border-slate-100 hover:bg-slate-50/50 transition-colors">
+                                            <td className="py-5 px-6 text-slate-700 font-medium flex items-center gap-2">
+                                                {feat.name}
+                                                <HelpCircle className="w-4 h-4 text-slate-400 cursor-help opacity-0 group-hover:opacity-100 transition-opacity" />
+                                            </td>
+                                            <td className="py-5 px-6 text-slate-700">
+                                                {typeof feat.starter === 'boolean' ? (
+                                                    feat.starter ? <Check className="w-5 h-5 text-emerald-500" /> : <X className="w-5 h-5 text-slate-300" />
+                                                ) : (
+                                                    <span className="text-sm font-semibold">{feat.starter}</span>
+                                                )}
+                                            </td>
+                                            <td className="py-5 px-6 text-slate-900 font-semibold bg-blue-50/30">
+                                                {typeof feat.premium === 'boolean' ? (
+                                                    feat.premium ? <Check className="w-5 h-5 text-emerald-500" /> : <X className="w-5 h-5 text-slate-300" />
+                                                ) : (
+                                                    <span className="text-sm font-bold text-blue-600">{feat.premium}</span>
+                                                )}
+                                            </td>
+                                            <td className="py-5 px-6 text-slate-700">
+                                                {typeof feat.pro === 'boolean' ? (
+                                                    feat.pro ? <Check className="w-5 h-5 text-emerald-500" /> : <X className="w-5 h-5 text-slate-300" />
+                                                ) : (
+                                                    <span className="text-sm font-semibold">{feat.pro}</span>
+                                                )}
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </motion.div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-slate-50 hover:bg-white transition-colors">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-              <h2 className="text-3xl font-bold text-slate-900 mb-12">Frequently Asked Questions</h2>
-              <div className="grid md:grid-cols-2 gap-8 text-left">
-                  <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                      <h3 className="font-bold text-slate-900 mb-2">Can I switch plans later?</h3>
-                      <p className="text-slate-600 text-sm">Absolutely. You can upgrade or downgrade your plan at any time from your dashboard settings.</p>
-                  </div>
-                  <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                      <h3 className="font-bold text-slate-900 mb-2">Is there a setup fee?</h3>
-                      <p className="text-slate-600 text-sm">No setup fees. You only pay the monthly or annual subscription fee for your selected plan.</p>
-                  </div>
-                  <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                      <h3 className="font-bold text-slate-900 mb-2">Do you offer refunds?</h3>
-                      <p className="text-slate-600 text-sm">We offer a 7-day money-back guarantee if you're not satisfied with Befikra for any reason.</p>
-                  </div>
-                  <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                      <h3 className="font-bold text-slate-900 mb-2">Can I add more team members?</h3>
-                      <p className="text-slate-600 text-sm">Yes, additional team members can be added to the Premium plan for a small additional fee per user.</p>
-                  </div>
+      <section className="py-24 bg-white">
+          <div className="max-w-4xl mx-auto px-4">
+              <motion.div 
+                 initial={{ opacity: 0, y: 30 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 className="text-center mb-16"
+              >
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                  <p className="text-lg text-slate-600">Everything you need to know about our pricing</p>
+              </motion.div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                  {[
+                      {
+                          question: "Can I switch plans later?",
+                          answer: "Absolutely. You can upgrade or downgrade your plan at any time from your dashboard settings."
+                      },
+                      {
+                          question: "Is there a setup fee?",
+                          answer: "No setup fees. You only pay the monthly or annual subscription fee for your selected plan."
+                      },
+                      {
+                          question: "Do you offer refunds?",
+                          answer: "We offer a 7-day money-back guarantee if you're not satisfied with Befikra for any reason."
+                      },
+                      {
+                          question: "Can I add more team members?",
+                          answer: "Yes, additional team members can be added to the Premium plan for a small additional fee per user."
+                      }
+                  ].map((faq, i) => (
+                      <motion.div
+                          key={i}
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: i * 0.1 }}
+                          className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all group"
+                      >
+                          <h3 className="font-bold text-slate-900 mb-3 text-lg group-hover:text-blue-600 transition-colors">{faq.question}</h3>
+                          <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+                      </motion.div>
+                  ))}
               </div>
+
+              <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 }}
+                  className="mt-12 text-center p-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-blue-100"
+              >
+                  <p className="text-slate-700 mb-4">Still have questions?</p>
+                  <Link 
+                      href="/contact" 
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition-all hover:scale-105"
+                  >
+                      Contact our team
+                      <ArrowRight className="w-4 h-4" />
+                  </Link>
+              </motion.div>
           </div>
       </section>
 

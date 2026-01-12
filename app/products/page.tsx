@@ -9,27 +9,6 @@ import Image from "next/image";
 
 const products = [
   {
-    title: "AI Vendor Panel",
-    description: "The operating system for your business. Manage leads, bookings, payments, and team operations from one dashboard.",
-    href: "/products/vendor-panel",
-    features: ["Lead Management", "Booking System", "Payment Tracking", "Team Collaboration"],
-    bgImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&auto=format&fit=crop&q=80"
-  },
-  {
-    title: "UniChat",
-    description: "Unified inbox for WhatsApp, Instagram & Web. AI handles support while your team closes sales.",
-    href: "/products/unichat",
-    features: ["Multi-Channel Inbox", "AI Auto-Response", "Real-time Sync", "Smart Routing"],
-    bgImage: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=1200&auto=format&fit=crop&q=80"
-  },
-  {
-    title: "Snaplink",
-    description: "The ultimate link-in-bio booking store. Showcase trips and capture leads directly from Instagram.",
-    href: "/products/snaplink",
-    features: ["Custom Landing Page", "Trip Showcase", "Lead Capture", "Instagram Integration"],
-    bgImage: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&auto=format&fit=crop&q=80"
-  },
-  {
     title: "Instagram Automation",
     description: "Turn comments and DMs into bookings instantly. Auto-reply to leads 24/7.",
     href: "/products/instagram",
@@ -49,6 +28,27 @@ const products = [
     href: "/products/website",
     features: ["Payment Gateway", "Booking Calendar", "Custom Forms", "Email Confirmations"],
     bgImage: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=1200&auto=format&fit=crop&q=80"
+  },
+  {
+    title: "AI Vendor Panel",
+    description: "The operating system for your business. Manage leads, bookings, payments, and team operations from one dashboard.",
+    href: "/products/vendor-panel",
+    features: ["Lead Management", "Booking System", "Payment Tracking", "Team Collaboration"],
+    bgImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&auto=format&fit=crop&q=80"
+  },
+  {
+    title: "UniChat",
+    description: "Unified inbox for WhatsApp, Instagram & Web. AI handles support while your team closes sales.",
+    href: "/products/unichat",
+    features: ["Multi-Channel Inbox", "AI Auto-Response", "Real-time Sync", "Smart Routing"],
+    bgImage: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=1200&auto=format&fit=crop&q=80"
+  },
+  {
+    title: "Snaplink",
+    description: "The ultimate link-in-bio booking store. Showcase trips and capture leads directly from Instagram.",
+    href: "/products/snaplink",
+    features: ["Custom Landing Page", "Trip Showcase", "Lead Capture", "Instagram Integration"],
+    bgImage: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&auto=format&fit=crop&q=80"
   }
 ];
 

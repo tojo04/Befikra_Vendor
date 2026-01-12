@@ -114,7 +114,7 @@ export default function DemoPage() {
                         type="text" 
                         id="fullName" 
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all placeholder:text-slate-400"
                         placeholder="John Doe"
                       />
                     </div>
@@ -125,7 +125,7 @@ export default function DemoPage() {
                         type="text" 
                         id="businessName" 
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all placeholder:text-slate-400"
                         placeholder="My Adventure Co."
                       />
                     </div>
@@ -137,7 +137,7 @@ export default function DemoPage() {
                           type="tel" 
                           id="phone" 
                           required
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all"
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all placeholder:text-slate-400"
                           placeholder="+91 98765 43210"
                         />
                       </div>
@@ -147,7 +147,7 @@ export default function DemoPage() {
                           type="email" 
                           id="email" 
                           required
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all"
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all placeholder:text-slate-400"
                           placeholder="john@example.com"
                         />
                       </div>
@@ -157,10 +157,10 @@ export default function DemoPage() {
                       <label htmlFor="businessType" className="block text-sm font-medium text-slate-700 mb-1">Business Type</label>
                       <select 
                         id="businessType"
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all appearance-none bg-white"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all appearance-none bg-white text-slate-900"
                         style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: `right 0.5rem center`, backgroundRepeat: `no-repeat`, backgroundSize: `1.5em 1.5em`, paddingRight: `2.5rem` }}
                       >
-                        <option value="">Select an option</option>
+                        <option value="" className="text-slate-400">Select an option</option>
                         <option value="trekking">Trekking Group</option>
                         <option value="camps">Camps / Outdoor Experiences</option>
                         <option value="adventure_sports">Adventure Sports</option>
@@ -177,7 +177,7 @@ export default function DemoPage() {
                       <input 
                         type="url" 
                         id="socialLink" 
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all placeholder:text-slate-400"
                         placeholder="https://instagram.com/..."
                       />
                     </div>

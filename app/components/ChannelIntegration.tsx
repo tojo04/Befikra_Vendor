@@ -3,6 +3,7 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { Globe, CheckCircle2, ArrowUpRight, Sparkles } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const channels = [
@@ -14,6 +15,7 @@ const channels = [
     description: "Capture adventure-seekers directly from their feeds. Every DM becomes a potential booking.",
     color: "from-purple-600 to-pink-600",
     accentColor: "#E4405F",
+    href: "/products/instagram",
     features: [
       "Auto-respond to story mentions",
       "Convert comments to leads instantly",
@@ -29,6 +31,7 @@ const channels = [
     description: "Meet your customers where they already are. Instant quotes, automated follow-ups, personal touch at scale.",
     color: "from-green-500 to-emerald-600",
     accentColor: "#25D366",
+    href: "/products/whatsapp",
     features: [
       "Instant itinerary sharing",
       "Smart broadcast campaigns",
@@ -44,6 +47,7 @@ const channels = [
     description: "Transform your website into an intelligent sales agent that never sleeps, never misses a lead.",
     color: "from-blue-500 to-cyan-500",
     accentColor: "#3B82F6",
+    href: "/products/website",
     features: [
       "AI-powered live chat",
       "Smart lead capture forms",
@@ -215,14 +219,16 @@ export function ChannelIntegration() {
                   </div>
 
                   {/* CTA */}
-                  <motion.button
-                    whileHover={{ x: 5 }}
-                    className="flex items-center gap-2 text-sm font-semibold group/btn mt-auto"
-                    style={{ color: channel.accentColor }}
-                  >
-                    Learn more
-                    <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                  </motion.button>
+                  <Link href={channel.href}>
+                    <motion.div
+                      whileHover={{ x: 5 }}
+                      className="flex items-center gap-2 text-sm font-semibold group/btn mt-auto cursor-pointer"
+                      style={{ color: channel.accentColor }}
+                    >
+                      Learn more
+                      <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    </motion.div>
+                  </Link>
                 </div>
 
                 {/* Shine effect */}

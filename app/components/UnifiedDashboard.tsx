@@ -67,10 +67,11 @@ export function UnifiedDashboard() {
     setCurrentIndex((prev) => (prev - 1 + features.length) % features.length);
   };
 
-  // Calculate the transform offset to center the active card
+  // Calculate the transform offset - start from left edge, not center
   const cardWidth = 400; // Width of each card
   const gap = 24; // gap-6 = 24px
-  const offset = -(currentIndex * (cardWidth + gap)) + (typeof window !== 'undefined' ? window.innerWidth / 2 - cardWidth / 2 : 0);
+  // Start cards from the left with some padding, then slide left as user progresses
+  const offset = -(currentIndex * (cardWidth + gap));
 
   return (
     <section className="py-32 overflow-hidden" style={{ backgroundColor: '#0A1E3B' }}>

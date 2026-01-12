@@ -1,0 +1,63 @@
+Page: Blog 
+
+Blog Section Structure (Simple)
+Blog Landing Page
+•	Page heading
+•	Short intro line
+•	Category filter (tabs)
+•	Blog cards grid
+•	Load more / pagination
+________________________________________
+Blog Card
+•	Thumbnail
+•	Category tag
+•	Title
+•	Short excerpt
+•	Date / Read time
+________________________________________
+Blog Detail Page
+•	Title + meta info
+•	Cover image
+•	Article content
+•	Inline CTA (Schedule Demo)
+•	Related posts
+________________________________________
+📂 Blog Categories (Only What Matters)
+1.	Vendor Growth
+→ Sales, scaling, mindset, business strategies
+2.	AI & Automation
+→ Instagram, WhatsApp, booking automation, AI use cases
+3.	Operations
+→ Bookings, team management, payments, workflows
+4.	Product Updates
+→ New features, improvements, announcements
+Featured Articles (Section)
+How Trekking Agencies Can Fill Batches Faster Using AI Automation
+Growth strategies for managing high enquiry volumes during peak season.
+WhatsApp Automation for Adventure Businesses: A Practical Guide
+Turn everyday chats into structured bookings.
+Why Most Travel Websites Don’t Convert (And How to Fix It)
+Booking engine insights for experience vendors.
+From DMs to Bookings: Building an Instagram Sales System
+How vendors can stop manual replies and scale conversions.
+Running an Experience Business Like a System, Not Chaos
+Mindset and tools for sustainable growth.
+.
+________________________________________
+Learn. Apply. Grow.
+Every article is written to help you:
+•	Save time
+•	Increase bookings
+•	Reduce manual work
+•	Build long-term business systems
+________________________________________
+ 
+Want These Insights Applied to Your Business?
+Reading helps. Seeing it live works better.
+Primary CTA: Schedule a Demo
+Secondary CTA: Vendor Login
+________________________________________
+Footer (Short)
+Product • Pricing • Industries • FAQs • Contact
+Privacy Policy • Terms of Service
+© Befikra. All rights reserved.
